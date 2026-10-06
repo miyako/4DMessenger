@@ -11,7 +11,9 @@
     626,
     51
    ],
-   "align": "center"
+   "align": "center",
+   "size": 42,
+   "weight": "bold"
   },
   {
    "box": [
@@ -20,7 +22,8 @@
     467,
     30
    ],
-   "align": "center"
+   "align": "center",
+   "size": 24
   },
   {
    "box": [
@@ -29,7 +32,10 @@
     268,
     34
    ],
-   "align": "center"
+   "align": "center",
+   "size": 28,
+   "weight": "bold",
+   "erase": "row"
   },
   {
    "box": [
@@ -38,7 +44,10 @@
     323,
     34
    ],
-   "align": "center"
+   "align": "center",
+   "size": 28,
+   "weight": "bold",
+   "erase": "row"
   },
   {
    "box": [
@@ -65,7 +74,8 @@
     386,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -74,7 +84,8 @@
     370,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -83,7 +94,8 @@
     251,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -92,7 +104,8 @@
     251,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -101,7 +114,8 @@
     114,
     21
    ],
-   "align": "center"
+   "align": "left",
+   "size": 17
   },
   {
    "box": [
@@ -110,7 +124,8 @@
     93,
     21
    ],
-   "align": "center"
+   "align": "left",
+   "size": 17
   },
   {
    "box": [
@@ -137,7 +152,9 @@
     170,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21,
+   "weight": "bold"
   },
   {
    "box": [
@@ -146,7 +163,8 @@
     317,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -155,7 +173,8 @@
     326,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -164,7 +183,8 @@
     324,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -173,7 +193,8 @@
     324,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -182,7 +203,8 @@
     83,
     21
    ],
-   "align": "center"
+   "align": "left",
+   "size": 17
   },
   {
    "box": [
@@ -191,7 +213,8 @@
     83,
     21
    ],
-   "align": "center"
+   "align": "left",
+   "size": 17
   },
   {
    "box": [
@@ -200,7 +223,10 @@
     203,
     30
    ],
-   "align": "center"
+   "align": "center",
+   "size": 25,
+   "weight": "bold",
+   "erase": "row"
   },
   {
    "box": [
@@ -209,7 +235,10 @@
     203,
     30
    ],
-   "align": "center"
+   "align": "center",
+   "size": 25,
+   "weight": "bold",
+   "erase": "row"
   },
   {
    "box": [
@@ -218,7 +247,8 @@
     315,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -227,7 +257,8 @@
     329,
     26
    ],
-   "align": "center"
+   "align": "center",
+   "size": 21
   },
   {
    "box": [
@@ -236,7 +267,8 @@
     178,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -245,7 +277,8 @@
     178,
     24
    ],
-   "align": "center"
+   "align": "center",
+   "size": 19
   },
   {
    "box": [
@@ -254,7 +287,8 @@
     146,
     24
    ],
-   "align": "center"
+   "align": "left",
+   "size": 19
   },
   {
    "box": [
@@ -263,7 +297,8 @@
     175,
     24
    ],
-   "align": "center"
+   "align": "left",
+   "size": 19
   },
   {
    "box": [
@@ -272,7 +307,8 @@
     183,
     24
    ],
-   "align": "center"
+   "align": "left",
+   "size": 19
   },
   {
    "box": [
@@ -281,16 +317,54 @@
     154,
     24
    ],
-   "align": "center"
+   "align": "left",
+   "size": 19
   },
   {
    "box": [
     1258,
     1095,
-    486,
+    382,
     24
    ],
-   "align": "center"
+   "align": "left",
+   "size": 19,
+   "bg": [
+    236,
+    239,
+    240,
+    255
+   ]
+  },
+  {
+   "box": [
+    1643,
+    1095,
+    95,
+    24
+   ],
+   "bg": [
+    248,
+    249,
+    250,
+    255
+   ],
+   "erase_pad": 2
+  },
+  {
+   "box": [
+    1739,
+    1095,
+    28,
+    24
+   ],
+   "bg": [
+    255,
+    255,
+    255,
+    255
+   ],
+   "erase_pad": 2
   }
  ]
 }

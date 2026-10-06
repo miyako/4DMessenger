@@ -43,7 +43,7 @@ h4 { font-size: 11pt; margin: 1.1em 0 0.4em; }
   text-align: center;
   padding-top: 2.6in;
 }
-.cover h1 { font-size: 20pt; margin: 0 0 1.2em; }
+.cover h1 { font-size: 20pt; margin: 0 0 1.2em; word-break: auto-phrase; text-wrap: balance; }
 .cover p { text-align: center; margin: 0 0 0.6em; }
 
 /* Table of contents */
@@ -101,4 +101,3 @@ figcaption {
 table { border-collapse: collapse; margin: 0.4em auto 1em; font-size: 10pt; }
 th, td { border-bottom: 1px solid #ccc; padding: 0.25em 1.2em; }
 th { text-align: left; border-bottom: 1.5px solid #888; }
-td:last-child, th:last-child { text-align: right; }

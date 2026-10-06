@@ -156,7 +156,12 @@ def render(name, layout, en, ja):
     for item, src, dst, box, bg, fg, weight, left, right, size_en in jobs:
         x, y, w, h = box
         p = item.get("erase_pad", 3)
-        draw.rectangle([x - p, y - p, x + w + p, y + h + p], fill=bg)
+        if item.get("erase") == "row":  # vertical gradients: repeat the pixel left of the box on each row
+            sx = max(0, x - p - 2)
+            for yy in range(max(0, y - p), min(img.size[1], y + h + p + 1)):
+                draw.line([(x - p, yy), (x + w + p, yy)], fill=img.getpixel((sx, yy)))
+        else:
+            draw.rectangle([x - p, y - p, x + w + p, y + h + p], fill=bg)
     W = img.size[0]
     for item, src, dst, box, bg, fg, weight, left, right, size_en in jobs:
         if not dst:

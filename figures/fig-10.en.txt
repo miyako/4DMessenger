@@ -30,3 +30,5 @@ Transmission Flow
 Application Classes
 UI Form Objects
 Data flows through dedicated classes maintained by
+(legend overflow, panel)
+(legend overflow, margin)

@@ -37,8 +37,49 @@ Full-width `（）` and `：` in prose. First occurrence of a technical term: �
 
 | English | 日本語 | Notes |
 |---|---|---|
+| TCP listener / connection (classes) | TCPListener / TCPConnection | Class names stay in English |
+| message | メッセージ | |
+| messaging application / system | メッセージングアプリケーション / メッセージングシステム | |
+| node | ノード | "nodes" section: 「ノード（nodes）」 |
+| channel / broadcast channel | チャンネル / 配信チャンネル | |
+| recipient / sender | 受信者 / 送信者 | |
+| preferences | 環境設定 | App settings saved as JSON |
+| encryption key | 暗号化キー | |
+| publication address / port | 公開アドレス / 公開ポート番号 | |
+| listen (for connections) | 待ち受ける / 待ち受け | |
+| request | リクエスト | |
+| routing (way) | ルーティング | |
+| cargo | カーゴ（Cargo） | Payload field |
+| encapsulate / unencapsulate | カプセル化 / カプセル化の解除 | requestPack / requestUnPack |
+| encryption / decryption | 暗号化 / 復号 | |
+| passphrase | パスフレーズ | |
+| padding | パディング | |
+| hash | ハッシュ | |
+| acknowledgment of receipt | 受信確認 | |
+| reception code | 受信コード | 0x1 / 0x2 |
+| peer-to-peer | ピアツーピア | First occurrence: ピアツーピア（peer-to-peer） |
+| contextual menu | コンテキストメニュー | |
+| popup | ポップアップメニュー | mChannel |
+| drag-and-drop | ドラッグ＆ドロップ | |
+| data folder | データフォルダー | |
+| network layer / presentation layer | ネットワーク層 / プレゼンテーション層 | fig-10 |
+| 4D command names | English names, e.g. **WA EXECUTE JAVASCRIPT FUNCTION** | As in the 4D Japanese docs; original's French "WA EXÉCUTER FONCTION JAVASCRIPT" corrected |
 
 ## Proper nouns in examples
 
 | English | 日本語 | Notes |
 |---|---|---|
+| Olivier Marolleau | Olivier Marolleau | Author, kept in Latin script |
+| 4D France | 4D France | |
+| tracteur Lamborghini.png | tracteur Lamborghini.png | Sample file name; demo data not localised |
+
+## Corrections of the original (applied in ja only)
+
+| Original | Correction |
+|---|---|
+| “CPListener” / “CPConnection” (p21) | TCPListener / TCPConnection |
+| callContexteMenu (p13) | callContextMenu |
+| resourceUnpack function (p17) | requestUnPack |
+| « OnData » (p18) | onData |
+| "zMessInput" as the reception display (p7) | zMessOutput (as in the form) |
+| La classe … class / l’objet (French leftovers) | translated normally |
