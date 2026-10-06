@@ -1,0 +1,31 @@
+eco
+4D Messager | PRC:7 | WIN:1310729
+4D Messanger
+air
+Communication :
+Key
+MyKey
+Port:
+19820
+Address
+192.168.0.10
+User:
+Avatar
+Name
+Olive
+Nodes :
+Address
+User
+192.168.0.20
+Yves
+192.168.0.30
+Xena
+Channels :
+Name
+Recipients
+Channel :
+Default
+Default
+Yves, Xena
+4
+Save

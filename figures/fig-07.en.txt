@@ -1,0 +1,53 @@
+eco
+53 Formulaire: fm_messenger_main
+EB |Z onto
+et & 0. TN
+4D Messanger
+Form.cs_interface.listen
+Communication :
+key
+Form.cs_preferences.comm.key
+50
+Form.cs_preferences.com
+Port:
+Form.cs_pr
+Address
+mad
+rannos rar
+PINS
+100
+(User
+150
+NUT
+Avatar
+iUser
+Name
+Form.cs_preferences.user.
+Avatar"
+Inara
+200
+(— Nodes
+250
+Address
+User
+This.user
+300
+350
+‘400
+"zMessOutput"
+(— Channels :
+Name
+Recipients.
+450
+Channel :
+‘mChannel
+This.users
+600
+33)
+222
+650
+"zMessinput"
+600
+Save
+700
+050

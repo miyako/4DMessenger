@@ -28,7 +28,8 @@
     ],
     "fonts": [
       "SegoeUIHistoric"
-    ]
+    ],
+    "boxed": true
   },
   "bullets": {
     "fonts": [
@@ -42,5 +43,17 @@
   "table": {
     "size": 9
   },
-  "$comment": "Document-specific settings. Run `make inspect` and review; see tools/config.py for all keys and defaults."
+  "$comment": "Document-specific settings. Run `make inspect` and review; see tools/config.py for all keys and defaults.",
+  "vector_figures": [
+    {
+      "page": 14,
+      "clip": [
+        96,
+        408,
+        520,
+        690
+      ],
+      "dpi": 300
+    }
+  ]
 }

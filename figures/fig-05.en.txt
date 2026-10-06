@@ -1,0 +1,57 @@
+eco
+Formulaire: fm_messenger_main
+100%
+00
+4D Messanger
+Communication :
+Form.cs_interface.listen
+Key
+Form.cs_preferences.comm.key
+50
+Port: Form.cs_prefe
+Address
+Form.cs_preferences.com
+44in
+m addrase
+ranras
+100
+(— User :
+150
+NUT
+Avatar
+"iUser
+Name :
+Form.cs_preferences.user.
+nama,
+Avatar"
+200
+Nodes :
+250
+Address
+User
+300
+This.address
+‘This.user
+350
+400
+"zMessOutput”
+Channels :
+450
+Name
+Recipients
+Channel :
+mChannel
+This.name
+This.users
+500
+550
+NUT
+"zMessinput"
+600
+Save
+650
+00
+00
+850
+950
+000
