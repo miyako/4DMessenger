@@ -1,0 +1,99 @@
+{
+	"bars": [
+		{
+			"id": 1,
+			"name": "Bar1",
+			"items": [
+				{
+					"link": 32001
+				},
+				{
+					"link": 32002
+				},
+				{
+					"link": 32003
+				}
+			]
+		}
+	],
+	"menus": [
+		{
+			"link": 32001,
+			"title": ":xliff:xCommonMenuFile",
+			"items": [
+				{
+					"title": ":xliff:xTitleApp",
+					"method": "app_messenger_main"
+				},
+				{
+					"title": ":xliff:xCommonMenuItemQuit",
+					"shortcutAccel": true,
+					"shortcutKey": "Q",
+					"action": "quit"
+				}
+			]
+		},
+		{
+			"link": 32002,
+			"title": ":xliff:xCommonMenuEdit",
+			"items": [
+				{
+					"title": ":xliff:xCommonMenuItemUndo",
+					"shortcutAccel": true,
+					"shortcutKey": "Z",
+					"action": "undo"
+				},
+				{
+					"title": "(-",
+					"isSeparator": true
+				},
+				{
+					"title": ":xliff:xCommonMenuItemCut",
+					"shortcutAccel": true,
+					"shortcutKey": "X",
+					"action": "cut"
+				},
+				{
+					"title": ":xliff:xCommonMenuItemCopy",
+					"shortcutAccel": true,
+					"shortcutKey": "C",
+					"action": "copy"
+				},
+				{
+					"title": ":xliff:xCommonMenuItemPaste",
+					"shortcutAccel": true,
+					"shortcutKey": "V",
+					"action": "paste"
+				},
+				{
+					"title": ":xliff:xCommonMenuItemClear",
+					"action": "clear"
+				},
+				{
+					"title": ":xliff:xCommonMenuItemSelectAll",
+					"shortcutAccel": true,
+					"shortcutKey": "A",
+					"action": "selectAll"
+				},
+				{
+					"title": "(-",
+					"isSeparator": true
+				},
+				{
+					"title": ":xliff:xCommonMenuItemShowClipboard",
+					"action": "showClipboard"
+				}
+			]
+		},
+		{
+			"link": 32003,
+			"title": ":xliff:xCommonMenuMode",
+			"items": [
+				{
+					"title": ":xliff:xCommonMenuItemDesign",
+					"action": "design"
+				}
+			]
+		}
+	]
+}

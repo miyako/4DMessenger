@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xliff version="1.0" xmlns:d4="http://www.4d.com">
+
+	<file datatype="x-4DK#" original="undefined" source-language="en-US" target-language="en" product-version="v17">
+
+		<header>
+			<note></note>
+		</header>
+		
+		<body>
+
+		<!--groups' labels-->
+
+			<group resname="themes">
+				<trans-unit id="xK_messenger_theme_way" resname="0198550BB47C7D70BCFF5F831AE249AE" translate="no">
+					<source>4D Messenger Way</source>
+				</trans-unit>
+				<trans-unit id="xK_messenger_theme_datatype" resname="01985532E7047051A01086F7F7AC3A36" translate="no">
+					<source>4D Messenger Data Type</source>
+				</trans-unit>
+			</group>
+
+		<!--constants way-->
+
+			<group restype="x-4DK#" d4:groupName="0198550BB47C7D70BCFF5F831AE249AE">
+
+				<trans-unit id="xK_messenger_receive" d4:value="1">
+					<source>x Messenger Receive</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_send" d4:value="2">
+					<source>x Messenger Send</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_usericon" d4:value="3">
+					<source>x Messenger Get user icon</source>
+				</trans-unit>
+
+			</group>
+
+		<!--constants type-->
+
+			<group restype="x-4DK#" d4:groupName="01985532E7047051A01086F7F7AC3A36">
+
+				<trans-unit id="xK_messenger_dtype_clear" d4:value="0">
+					<source>x Messenger Clear</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_dtype_text" d4:value="2">
+					<source>x Messenger Data Text</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_dtype_pict" d4:value="3">
+					<source>x Messenger Data Pict</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_dtype_movie" d4:value="4">
+					<source>x Messenger Data Movie</source>
+				</trans-unit>
+
+				<trans-unit id="xK_messenger_dtype_file" d4:value="5">
+					<source>x Messenger Data File</source>
+				</trans-unit>
+
+			</group>
+
+		</body>
+	</file>
+</xliff>

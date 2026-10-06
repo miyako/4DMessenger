@@ -1,0 +1,34 @@
+{
+	"4D Messager Explorer": {
+		"groups": [
+			"Default_Classes",
+			"Default_Forms",
+			"Default_Methods",
+			"Default_Tables"
+		]
+	},
+	"Default_Classes": {
+		"classes": [
+			"Lib_Messenger_Interface",
+			"Lib_Messenger_Net_Input",
+			"Lib_Messenger_Net_Output",
+			"Lib_Messenger_Net_Request",
+			"Lib_Messenger_Preferences",
+			"Lib_Messenger_Stream"
+		]
+	},
+	"Default_Forms": {
+		"forms": [
+			"fm_messenger_errors",
+			"fm_messenger_main"
+		]
+	},
+	"Default_Methods": {
+		"methods": [
+			"app_messenger_error",
+			"app_messenger_main"
+		]
+	},
+	"Default_Tables": {},
+	"trash": {}
+}

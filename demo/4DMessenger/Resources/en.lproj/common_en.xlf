@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+
+<xliff version="1.0">
+
+  <file datatype="x-STR#" original="undefined" product-Version="v19" source-language="en" target-language="en">
+    <header>
+      <note>application common</note>
+    </header>
+
+    <group resname="xGroup">
+
+      <trans-unit id="51000" resname="xGroupCom">
+        <source> Communication : </source>
+      </trans-unit>
+      <trans-unit id="51001" resname="xGroupUser">
+        <source> User : </source>
+      </trans-unit>
+      <trans-unit id="51002" resname="xGroupNode">
+        <source> Nodes : </source>
+      </trans-unit>
+      <trans-unit id="51003" resname="xGroupChannels">
+        <source> Channels : </source>
+      </trans-unit>
+
+    </group>
+
+    <group resname="xTitle">
+
+      <trans-unit id="52000" resname="xTitleApp">
+        <source>4D Messanger</source>
+      </trans-unit>
+      <trans-unit id="52001" resname="xTitleProperties">
+        <source>Properties</source>
+      </trans-unit>
+
+    </group>
+
+    <group resname="xLabel">
+
+      <trans-unit id="53000" resname="xLabelKey">
+        <source>Key : </source>
+      </trans-unit>
+      <trans-unit id="53001" resname="xLabelUserName">
+        <source>Name : </source>
+      </trans-unit>
+      <trans-unit id="53002" resname="xLabelUserAvatar">
+        <source>Avatar : </source>
+      </trans-unit>
+      <trans-unit id="53003" resname="xLabelAddress">
+        <source>Address : </source>
+      </trans-unit>
+
+    </group>
+
+    <group resname="xTooltip">
+
+      <trans-unit id="54000" resname="xTipEraseHistory">
+        <source>Erase history</source>
+      </trans-unit>
+      <trans-unit id="54001" resname="xTipSendMessage">
+        <source>Send message</source>
+      </trans-unit>
+
+    </group>
+
+    <group resname="xText">
+
+      <trans-unit id="55000" resname="xTextNodeAddress">
+        <source>Address</source>
+      </trans-unit>
+      <trans-unit id="55001" resname="xTextNodeUser">
+        <source>User</source>
+      </trans-unit>
+      <trans-unit id="55002" resname="xTextSaved">
+        <source>Saved preferences !</source>
+      </trans-unit>
+      <trans-unit id="55003" resname="xTextChannelName">
+        <source>Name</source>
+      </trans-unit>
+      <trans-unit id="55004" resname="xTextChannelUsers">
+        <source>Recipients</source>
+      </trans-unit>
+      <trans-unit id="55005" resname="xTextChannel">
+        <source>Channel : </source>
+      </trans-unit>
+
+    </group>
+
+    <group resname="xButton">
+
+      <trans-unit id="56001" resname="xButtonSave">
+        <source>Save</source>
+      </trans-unit>
+
+    </group>
+
+  </file>
+
+</xliff>

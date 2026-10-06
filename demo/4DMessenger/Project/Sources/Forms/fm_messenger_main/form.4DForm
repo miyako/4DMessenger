@@ -1,0 +1,806 @@
+{
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"windowSizingX": "variable",
+	"windowSizingY": "variable",
+	"windowMinWidth": 512,
+	"windowMinHeight": 640,
+	"windowMaxWidth": 32767,
+	"windowMaxHeight": 32767,
+	"events": [
+		"onLoad",
+		"onClick",
+		"onUnload"
+	],
+	"windowTitle": "window title",
+	"destination": "detailScreen",
+	"pages": [
+		{
+			"objects": {
+				"rBackground": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 0,
+					"width": 512,
+					"height": 640,
+					"stroke": "transparent",
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"fill": "#EFEFEE"
+				},
+				"rAreaInput": {
+					"type": "rectangle",
+					"top": 462,
+					"left": 20,
+					"width": 472,
+					"height": 156,
+					"borderRadius": 8,
+					"stroke": "#c0c0c0",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"rProperties": {
+					"type": "rectangle",
+					"top": 0,
+					"left": 515,
+					"width": 512,
+					"height": 640,
+					"sizingX": "move",
+					"sizingY": "grow",
+					"stroke": "transparent",
+					"fill": "#EFEFEE"
+				},
+				"tTitle": {
+					"type": "text",
+					"text": ":xliff:xTitleApp",
+					"top": 10,
+					"left": 20,
+					"width": 188,
+					"height": 32,
+					"class": "ss_title"
+				},
+				"nHeader": {
+					"type": "line",
+					"top": 52,
+					"left": 10,
+					"width": 492,
+					"height": 0,
+					"sizingX": "grow"
+				},
+				"rCom": {
+					"type": "rectangle",
+					"top": 19,
+					"left": 536,
+					"width": 472,
+					"height": 98,
+					"sizingX": "move",
+					"borderRadius": 8,
+					"class": "ss_group"
+				},
+				"rUser": {
+					"type": "rectangle",
+					"top": 138,
+					"left": 536,
+					"width": 472,
+					"height": 88,
+					"sizingX": "move",
+					"borderRadius": 8,
+					"sizingY": "fixed",
+					"class": "ss_group"
+				},
+				"tGroupCom": {
+					"type": "text",
+					"text": ":xliff:xGroupCom",
+					"top": 11,
+					"left": 562,
+					"width": 120,
+					"height": 16,
+					"class": "ss_group",
+					"sizingX": "move"
+				},
+				"tGroupUser": {
+					"type": "text",
+					"text": ":xliff:xGroupUser",
+					"top": 131,
+					"left": 562,
+					"width": 120,
+					"height": 16,
+					"class": "ss_group",
+					"sizingX": "move"
+				},
+				"rNode": {
+					"type": "rectangle",
+					"top": 248,
+					"left": 536,
+					"width": 472,
+					"height": 158,
+					"sizingX": "move",
+					"borderRadius": 8,
+					"sizingY": "grow",
+					"class": "ss_group"
+				},
+				"tGroupNode": {
+					"type": "text",
+					"text": ":xliff:xGroupNode",
+					"top": 241,
+					"left": 562,
+					"width": 120,
+					"height": 16,
+					"class": "ss_group",
+					"sizingX": "move"
+				},
+				"rAreaOutput": {
+					"type": "rectangle",
+					"top": 67,
+					"left": 20,
+					"width": 472,
+					"height": 366,
+					"borderRadius": 8,
+					"stroke": "#c0c0c0",
+					"sizingX": "grow",
+					"sizingY": "grow"
+				},
+				"nHorzLimite": {
+					"type": "line",
+					"top": 0,
+					"left": 515,
+					"width": 0,
+					"height": 640,
+					"sizingX": "move",
+					"sizingY": "grow",
+					"stroke": "#c0c0c0",
+					"strokeDashArray": [
+						6,
+						2
+					]
+				},
+				"rChannels": {
+					"type": "rectangle",
+					"top": 428,
+					"left": 536,
+					"width": 472,
+					"height": 153,
+					"sizingX": "move",
+					"borderRadius": 8,
+					"sizingY": "grow",
+					"class": "ss_group"
+				},
+				"tGroupChannels": {
+					"type": "text",
+					"text": ":xliff:xGroupChannels",
+					"top": 421,
+					"left": 562,
+					"width": 120,
+					"height": 16,
+					"class": "ss_group",
+					"sizingX": "move"
+				}
+			}
+		},
+		{
+			"objects": {
+				"zMessOutput": {
+					"type": "webArea",
+					"left": 21,
+					"top": 75,
+					"width": 470,
+					"height": 352,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"borderStyle": "none",
+					"class": "ss_default",
+					"urlSource": "zMessOutput_Url",
+					"progressSource": "zMessOutput_Progress",
+					"webEngine": "embedded",
+					"contextMenu": "automatic",
+					"events": [
+						"onLoad",
+						"onOpenExternalLink"
+					],
+					"method": "ObjectMethods/zMessOutput.4dm"
+				},
+				"bSend": {
+					"type": "button",
+					"text": "🡖",
+					"top": 575,
+					"left": 449,
+					"width": 34,
+					"height": 34,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_nope",
+					"sizingX": "move",
+					"sizingY": "move",
+					"method": "ObjectMethods/bSend.4dm",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[Return]",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/tp_send_mess"
+					}
+				},
+				"bClear": {
+					"type": "button",
+					"text": "⎚",
+					"top": 535,
+					"left": 449,
+					"width": 34,
+					"height": 34,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_nope",
+					"sizingX": "move",
+					"sizingY": "move",
+					"method": "ObjectMethods/bClear.4dm",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/tp_erase_hist"
+					}
+				},
+				"bProperties": {
+					"type": "pictureButton",
+					"left": 460,
+					"top": 10,
+					"width": 32,
+					"height": 32,
+					"events": [
+						"onClick"
+					],
+					"picture": "/RESOURCES/images/buttons/Extend.svg",
+					"rowCount": 4,
+					"method": "ObjectMethods/bProperties.4dm",
+					"switchWhenRollover": true,
+					"switchBackWhenReleased": true,
+					"useLastFrameAsDisabled": true,
+					"sizingX": "move"
+				},
+				"tUserName": {
+					"type": "text",
+					"text": ":xliff:xLabelUserName",
+					"top": 160,
+					"left": 721,
+					"width": 64,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "move"
+				},
+				"tKey": {
+					"type": "text",
+					"text": ":xliff:xLabelKey",
+					"top": 46,
+					"left": 541,
+					"width": 84,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "move"
+				},
+				"iKey": {
+					"type": "input",
+					"left": 638,
+					"top": 46,
+					"width": 316,
+					"height": 21,
+					"class": "ss_unprop",
+					"sizingX": "move",
+					"dataSource": "Form:C1466.cs_preferences.comm.key",
+					"events": []
+				},
+				"iUserName": {
+					"type": "input",
+					"left": 798,
+					"top": 160,
+					"width": 156,
+					"height": 21,
+					"class": "ss_default",
+					"sizingX": "move",
+					"dataSource": "Form:C1466.cs_preferences.user.name",
+					"events": []
+				},
+				"bCopy": {
+					"type": "button",
+					"text": "📋",
+					"top": 41,
+					"left": 966,
+					"width": 31,
+					"height": 31,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_nope",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "",
+					"method": "ObjectMethods/bCopy.4dm"
+				},
+				"tAddress": {
+					"type": "text",
+					"text": ":xliff:xLabelAddress",
+					"top": 81,
+					"left": 541,
+					"width": 84,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "move"
+				},
+				"iAddress": {
+					"type": "input",
+					"left": 638,
+					"top": 79,
+					"width": 161,
+					"height": 21,
+					"class": "ss_default",
+					"sizingX": "move",
+					"dataSource": "Form:C1466.cs_preferences.comm.address",
+					"events": [],
+					"enterable": true,
+					"fill": "#FFFFFF"
+				},
+				"tPort": {
+					"type": "text",
+					"text": "Port :",
+					"top": 78,
+					"left": 821,
+					"width": 44,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "move"
+				},
+				"iPort": {
+					"type": "input",
+					"left": 868,
+					"top": 77,
+					"width": 86,
+					"height": 21,
+					"class": "ss_default",
+					"sizingX": "move",
+					"dataSource": "Form:C1466.cs_preferences.comm.port",
+					"dataSourceTypeHint": "number",
+					"textAlign": "left",
+					"events": []
+				},
+				"sHorz1": {
+					"type": "splitter",
+					"left": 20,
+					"top": 442,
+					"width": 472,
+					"height": 5,
+					"sizingX": "grow",
+					"sizingY": "move"
+				},
+				"tUserAvatar": {
+					"type": "text",
+					"text": ":xliff:xLabelUserAvatar",
+					"top": 160,
+					"left": 543,
+					"width": 84,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "move"
+				},
+				"iUserAvatar": {
+					"type": "input",
+					"left": 640,
+					"top": 160,
+					"width": 44,
+					"height": 44,
+					"class": "ss_default",
+					"sizingX": "move",
+					"dataSource": "",
+					"dataSourceTypeHint": "picture",
+					"pictureFormat": "proportionalCenter",
+					"events": [],
+					"dragging": "none",
+					"dropping": "automatic",
+					"contextMenu": "automatic"
+				},
+				"bSave": {
+					"type": "button",
+					"text": ":xliff:xButtonSave",
+					"top": 598,
+					"left": 884,
+					"width": 124,
+					"height": 21,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_button",
+					"method": "ObjectMethods/bSave.4dm",
+					"sizingX": "move",
+					"sizingY": "move"
+				},
+				"xNode": {
+					"type": "listbox",
+					"left": 553,
+					"top": 268,
+					"width": 409,
+					"height": 117,
+					"events": [
+						"onSelectionChange"
+					],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.cs_preferences.comm.nodes",
+					"sizingX": "move",
+					"sizingY": "grow",
+					"currentItemSource": "",
+					"currentItemPositionSource": "xNode_pos",
+					"selectedItemsSource": "xNode_set",
+					"method": "ObjectMethods/xNode.4dm",
+					"selectionMode": "single",
+					"headerHeight": "24px",
+					"class": "ss_listbox",
+					"columns": [
+						{
+							"header": {
+								"text": ":xliff:xTextNodeAddress",
+								"name": "xNodes_h1",
+								"class": "ss_listbox"
+							},
+							"name": "xNodes_c1",
+							"footer": {
+								"name": "Pied1"
+							},
+							"width": 196,
+							"class": "ss_listbox",
+							"dataSource": "This:C1470.address",
+							"minWidth": 196
+						},
+						{
+							"header": {
+								"name": "xNodes_h2",
+								"text": ":xliff:xTextNodeUser",
+								"class": "ss_listbox"
+							},
+							"name": "xNodes_c2",
+							"footer": {
+								"name": "Pied2"
+							},
+							"width": 196,
+							"class": "ss_listbox",
+							"dataSource": "This:C1470.user",
+							"minWidth": 196
+						}
+					]
+				},
+				"bNodeAdd": {
+					"type": "button",
+					"text": "+",
+					"top": 270,
+					"left": 971,
+					"width": 26,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_button",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"method": "ObjectMethods/bNodeAdd.4dm"
+				},
+				"bNodeDel": {
+					"type": "button",
+					"text": "-",
+					"top": 303,
+					"left": 971,
+					"width": 26,
+					"height": 26,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_button",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"method": "ObjectMethods/bNodeDel.4dm"
+				},
+				"zMessInput": {
+					"type": "webArea",
+					"left": 30,
+					"top": 498,
+					"width": 412,
+					"height": 109,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"borderStyle": "none",
+					"class": "ss_default",
+					"urlSource": "zMessInput_Url",
+					"progressSource": "zMessInput_Progress",
+					"webEngine": "embedded",
+					"contextMenu": "automatic",
+					"method": "ObjectMethods/zMessInput.4dm",
+					"events": [
+						"onGettingFocus",
+						"onOpenExternalLink"
+					]
+				},
+				"bSendShadow": {
+					"type": "button",
+					"text": "",
+					"top": 575,
+					"left": 482,
+					"width": 9,
+					"height": 34,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_nope",
+					"sizingX": "move",
+					"sizingY": "move",
+					"method": "ObjectMethods/bSendShadow.4dm",
+					"shortcutAccel": false,
+					"shortcutControl": false,
+					"shortcutShift": false,
+					"shortcutAlt": false,
+					"shortcutKey": "[Enter]",
+					"tooltip": {
+						"$ref": "/SOURCES/tips.json#/tp_send_mess"
+					},
+					"style": "custom",
+					"imageHugsTitle": false,
+					"focusable": false
+				},
+				"nBoxNode": {
+					"type": "line",
+					"top": 291,
+					"left": 553,
+					"width": 390,
+					"height": 0,
+					"sizingX": "move",
+					"stroke": "#808080"
+				},
+				"xChannel": {
+					"type": "listbox",
+					"left": 553,
+					"top": 448,
+					"width": 409,
+					"height": 117,
+					"events": [
+						"onSelectionChange"
+					],
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.cs_preferences.comm.channels",
+					"sizingX": "move",
+					"sizingY": "grow",
+					"currentItemSource": "",
+					"currentItemPositionSource": "xChannel_pos",
+					"selectedItemsSource": "xChannel_set",
+					"method": "ObjectMethods/xChannel.4dm",
+					"selectionMode": "single",
+					"headerHeight": "24px",
+					"columns": [
+						{
+							"header": {
+								"text": ":xliff:xTextChannelName",
+								"name": "xChannel_h1",
+								"class": "ss_listbox"
+							},
+							"name": "xChannel_c1",
+							"footer": {
+								"name": "Pied3"
+							},
+							"width": 196,
+							"class": "ss_listbox",
+							"dataSource": "This:C1470.name",
+							"minWidth": 196
+						},
+						{
+							"header": {
+								"name": "xChannel_h2",
+								"text": ":xliff:xTextChannelUsers",
+								"class": "ss_listbox"
+							},
+							"name": "xChannel_c2",
+							"footer": {
+								"name": "Pied4"
+							},
+							"width": 196,
+							"class": "ss_listbox",
+							"dataSource": "This:C1470.users",
+							"minWidth": 196
+						}
+					]
+				},
+				"bChannelAdd": {
+					"type": "button",
+					"text": "+",
+					"top": 450,
+					"left": 971,
+					"width": 26,
+					"height": 27,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_button",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"method": "ObjectMethods/bChannelAdd.4dm"
+				},
+				"bChannelDel": {
+					"type": "button",
+					"text": "-",
+					"top": 483,
+					"left": 971,
+					"width": 26,
+					"height": 26,
+					"events": [
+						"onClick"
+					],
+					"class": "ss_button",
+					"sizingX": "move",
+					"sizingY": "fixed",
+					"method": "ObjectMethods/bChannelDel.4dm"
+				},
+				"mChannel": {
+					"type": "dropdown",
+					"left": 276,
+					"top": 468,
+					"width": 197,
+					"height": 22,
+					"events": [
+						"onDataChange"
+					],
+					"sizingX": "grow",
+					"class": "ss_button",
+					"dataSource": "mChannel"
+				},
+				"tChannel": {
+					"type": "text",
+					"text": ":xliff:xTextChannel",
+					"top": 471,
+					"left": 150,
+					"width": 120,
+					"height": 16,
+					"class": "ss_label",
+					"sizingX": "fixed",
+					"textAlign": "right",
+					"fill": "transparent"
+				},
+				"nBoxChannel": {
+					"type": "line",
+					"top": 471,
+					"left": 553,
+					"width": 390,
+					"height": 0,
+					"sizingX": "move",
+					"stroke": "#808080"
+				},
+				"sHorz2": {
+					"type": "splitter",
+					"left": 523,
+					"top": 415,
+					"width": 491,
+					"height": 1,
+					"sizingX": "move"
+				},
+				"nLockNode": {
+					"type": "line",
+					"top": 266,
+					"left": 1007,
+					"width": 0,
+					"height": 129,
+					"stroke": "#1e90ff",
+					"sizingX": "move"
+				},
+				"nLockChannel": {
+					"type": "line",
+					"top": 446,
+					"left": 1007,
+					"width": 0,
+					"height": 129,
+					"stroke": "#1e90ff",
+					"sizingX": "move"
+				},
+				"nLockOutput": {
+					"type": "line",
+					"top": 86,
+					"left": 491,
+					"width": 0,
+					"height": 339,
+					"stroke": "#1e90ff",
+					"sizingX": "move"
+				},
+				"nLockInput": {
+					"type": "line",
+					"top": 476,
+					"left": 491,
+					"width": 0,
+					"height": 129,
+					"stroke": "#1e90ff",
+					"sizingX": "move"
+				},
+				"nLockHorz": {
+					"type": "line",
+					"top": 462,
+					"left": 32,
+					"width": 452,
+					"height": 0,
+					"stroke": "#1e90ff"
+				},
+				"Zone de saisie": {
+					"type": "input",
+					"left": 224,
+					"top": 15,
+					"width": 152,
+					"height": 17,
+					"dataSource": "Form:C1466.cs_interface.listen_on",
+					"dataSourceTypeHint": "boolean",
+					"booleanFormat": "📡On Air;Off Air",
+					"borderStyle": "none",
+					"fill": "transparent",
+					"class": "ss_default"
+				}
+			},
+			"entryOrder": [
+				"zMessInput",
+				"bSend",
+				"bClear",
+				"zMessOutput",
+				"iKey",
+				"bCopy",
+				"bNodeAdd",
+				"xNode",
+				"bNodeDel",
+				"bSave",
+				"iAddress",
+				"iPort",
+				"iUserAvatar",
+				"iUserName",
+				"bSendShadow",
+				"xChannel",
+				"bChannelAdd",
+				"bChannelDel",
+				"mChannel",
+				"Zone de saisie"
+			]
+		}
+	],
+	"method": "method.4dm",
+	"geometryStamp": 2696,
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {},
+			"View lock scroll min": {
+				"objects": [
+					"nLockNode",
+					"nLockChannel",
+					"nLockOutput",
+					"nLockInput",
+					"nLockHorz"
+				]
+			},
+			"View background box": {
+				"objects": [
+					"rBackground",
+					"rAreaInput",
+					"rProperties",
+					"rCom",
+					"rUser",
+					"tGroupCom",
+					"tGroupUser",
+					"rNode",
+					"tGroupNode",
+					"rAreaOutput",
+					"rChannels",
+					"tGroupChannels"
+				]
+			}
+		}
+	},
+	"menuBar": "Bar1",
+	"width": 512,
+	"height": 640
+}

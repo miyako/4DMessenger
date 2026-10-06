@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+
+<xliff version="1.0">
+
+  <file datatype="x-STR#" original="undefined" product-Version="v19" source-language="en" target-language="en">
+    <header>
+      <note>application error</note>
+    </header>
+
+    <group resname="xErrors">
+
+      <trans-unit id="90000" resname="xErrorChannelMissing">
+        <source> Bad channel !</source>
+      </trans-unit>
+      <trans-unit id="90001" resname="xErrorChannelNoUser">
+        <source> Channel no user linked !</source>
+      </trans-unit>
+
+    </group>
+
+  </file>
+
+</xliff>
