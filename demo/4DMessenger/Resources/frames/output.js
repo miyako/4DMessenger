@@ -218,16 +218,27 @@ function clearOutput() {
 
 }
 
+// strings in the 4D UI language (setStrings is called by 4D when the page is loaded)
+let strings = {
+    'dateFormat': '{dayName} {day} {month} {year} at {hh}:{mm}',
+    'days': 'Sun,Mon,Tue,Wed,Thu,Fri,Sat',
+    'months': 'Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec'
+};
+
+function setStrings(localized) {
+    Object.assign(strings, localized);
+}
+
 function codeTime (isoString, timeNumber) {
 
     // date
     const date = new Date(isoString);
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
-                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const days = strings.days.split(',');
+    const months = strings.months.split(',');
     const dayName = days[date.getUTCDay()];
     const day = date.getUTCDate();
     const month = months[date.getUTCMonth()];
+    const monthNumber = date.getUTCMonth() + 1;
     const year = date.getUTCFullYear();
 
     // time
@@ -237,6 +248,7 @@ function codeTime (isoString, timeNumber) {
     const hh = String(hours).padStart(2, '0');
     const mm = String(minutes).padStart(2, '0');
 
-    return `${dayName} ${day} ${month} ${year} at ${hh}:${mm}`;
+    const values = { dayName, day, month, monthNumber, year, hh, mm };
+    return strings.dateFormat.replace(/\{(\w+)\}/g, (match, key) => (key in values ? values[key] : match));
 
 }

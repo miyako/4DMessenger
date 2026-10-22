@@ -6,6 +6,18 @@ const message_text = document.getElementById('message_text');
 
 const MAX_SIZE = 64 * 1024 * 1024;
 
+// strings in the 4D UI language (setStrings is called by 4D when the page is loaded)
+let strings = {
+    'fileTooLarge': 'The file cannot be added: it is larger than {max} MB.'
+};
+
+function setStrings(localized) {
+    Object.assign(strings, localized);
+    if (strings.placeholder) {
+        message_text.placeholder = strings.placeholder;
+    }
+}
+
 // event drag on
 ['dragenter', 'dragover'].forEach(event => {
     message_text.addEventListener(event, e => {
@@ -33,7 +45,7 @@ message_text.addEventListener('drop', async (event) => {
 
         if ( file.size > MAX_SIZE ) {
 
-            alert('le fichier ne peut être ajouter > 64 mo !');
+            alert(strings.fileTooLarge.replace('{max}', MAX_SIZE / 1024 / 1024));
 
         } else {
 
