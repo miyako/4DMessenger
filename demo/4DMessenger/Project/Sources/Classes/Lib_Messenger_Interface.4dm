@@ -9,6 +9,9 @@
 
 property expansion_value : Integer
 property listen_on : Boolean
+property pending : Collection
+property input_ready : Boolean
+property output_ready : Boolean
 
 // ----------------------------------------------------------------------------------
 
@@ -20,6 +23,12 @@ Class constructor()
 	
 	This:C1470.expansion_value:=515
 	This:C1470.listen_on:=False:C215
+	
+	// messages waiting for the output page to be loaded
+	
+	This:C1470.pending:=New collection:C1472()
+	This:C1470.input_ready:=False:C215
+	This:C1470.output_ready:=False:C215
 	
 	// init area output
 	
@@ -104,40 +113,81 @@ Function actionCleanupCach()
 		End if 
 	End for 
 	
-Function actioListenClose()
+Function actioAttach()
 	
-	If (This:C1470.listen_on=True:C214)
-		Form:C1466.cs_net_input.terminate()
-	End if 
+	// the network worker listens even when this window is closed
+	
+	messenger_net("attach"; New object:C1471("window"; Current form window:C827; "settings"; Form:C1466.cs_preferences.export()))
+	
+Function actioDetach()
+	
+	messenger_net("detach")
 	
 Function actioListenMessage()
 	
-	If (This:C1470.listen_on=True:C214)
-		Form:C1466.cs_net_input.terminate()
+	// restart the listener with the saved settings
+	
+	messenger_net("settings"; New object:C1471("settings"; Form:C1466.cs_preferences.export()))
+	
+Function flush()
+	
+	// web areas load asynchronously: draw once their page is ready (form On Timer calls again)
+	
+	var $item : Object
+	
+	If (Not:C34(This:C1470.input_ready))
+		If (WA Evaluate JavaScript(*; "zMessInput"; "typeof setStrings === 'function' && document.readyState === 'complete'"; Is boolean))
+			
+			// pass the strings of the current language to the page
+			
+			WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessInput"; "setStrings"; *; New object:C1471(\
+				"placeholder"; Localized string:C991("xWebPlaceholder"); \
+				"fileTooLarge"; Localized string:C991("xWebFileTooLarge")))
+			This:C1470.input_ready:=True:C214
+			
+		End if 
 	End if 
 	
-	This:C1470.listen_on:=False:C215
+	If (Not:C34(This:C1470.output_ready))
+		If (WA Evaluate JavaScript(*; "zMessOutput"; "typeof drawMessage === 'function' && document.readyState === 'complete'"; Is boolean))
+			
+			WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessOutput"; "setStrings"; *; New object:C1471(\
+				"dateFormat"; Localized string:C991("xWebDateFormat"); \
+				"days"; Localized string:C991("xWebDays"); \
+				"months"; Localized string:C991("xWebMonths")))
+			WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessOutput"; "avatarPathSet"; *; Convert path system to POSIX:C1106(Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"))
+			This:C1470.output_ready:=True:C214
+			
+		End if 
+	End if 
 	
-	Case of 
-		: (Form:C1466.cs_preferences.comm.address="")
-			BEEP:C151
+	If (This:C1470.output_ready)
+		
+		For each ($item; This:C1470.pending)
 			
-		: (Form:C1466.cs_preferences.comm.iPort=0)
-			BEEP:C151
+			WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessOutput"; "drawMessage"; *; $item.update)
 			
-		: (Form:C1466.cs_preferences.user.name="")
-			BEEP:C151
+			If ($item.sent)
+				WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessInput"; "clearInput"; *)
+				GOTO OBJECT:C206(*; "zMessInput")
+			End if 
 			
-		Else 
-			
-			Form:C1466.cs_net_input:=cs:C1710.Lib_Messenger_Net_Input.new(Current form window:C827; Form:C1466.cs_preferences)
-			This:C1470.listen_on:=True:C214
-			
-	End case 
+		End for each 
+		
+		This:C1470.pending:=New collection:C1472()
+		
+	End if 
+	
+	If (This:C1470.input_ready & This:C1470.output_ready)
+		SET TIMER(0)
+	Else 
+		SET TIMER(10)
+	End if 
 	
 Function actioClearHistory()
 	
 	WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessOutput"; "clearOutput"; *)
+	messenger_net("clear")
 	
 	GOTO OBJECT:C206(*; "zMessInput")
 	
@@ -147,13 +197,7 @@ Function actioSendMessage()
 	
 	var $cargo : Collection
 	
-	var $requestDraw; $sender : Object
-	
-	var $requestPack : Blob
-	
-	var $users; $node : Collection
-	
-	var $user; $userIconPath : Text
+	var $users : Collection
 	
 	// load users from channel
 	
@@ -166,17 +210,11 @@ Function actioSendMessage()
 			
 		Else 
 			
-			// split users node for loop
-			
 			If ($users[0].users="")
 				
 				ALERT:C41(Localized string:C991("xErrorChannelNoUser"))
 				
 			Else 
-				
-				// init request
-				
-				$requestDraw:=cs:C1710.Lib_Messenger_Net_Request.new()
 				
 				// load cargo
 				
@@ -186,46 +224,9 @@ Function actioSendMessage()
 					return 
 				End if 
 				
-				$requestDraw.cargo:=$cargo
+				// the network worker sends it to each node of the channel
 				
-				// define coordinate
-				
-				$requestDraw.sender:=Form:C1466.cs_preferences.user.name
-				$requestDraw.recipient_list:=$users[0].users
-				
-				// send on each node
-				For each ($user; Split string:C1554($users[0].users; ","; sk ignore empty strings:K86:1))
-					
-					$node:=Form:C1466.cs_preferences.comm.nodes.query("user = :1"; $user)
-					If ($node.length=1)
-						
-						// user icon missing ?
-						$userIconPath:=Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"+Folder separator:K24:12+$user+".png"
-						If (Test path name:C476($userIconPath)#Is a document:K24:1)
-							
-							$requestDraw.way:=x Messenger Get user icon
-							$requestDraw.recipient:=$user
-							$requestPack:=$requestDraw.requestPack(Form:C1466.cs_preferences.comm.key)
-							
-							$sender:=cs:C1710.Lib_Messenger_Net_Output.new(Form:C1466.cs_preferences)
-							
-							$sender.connect($node[0].address)
-							$sender.send(OB Copy:C1225($requestDraw); $requestPack)
-							
-						End if 
-						
-						// make request
-						$requestDraw.way:=x Messenger Send
-						$requestDraw.recipient:=$user
-						$requestPack:=$requestDraw.requestPack(Form:C1466.cs_preferences.comm.key)
-						
-						$sender:=cs:C1710.Lib_Messenger_Net_Output.new(Form:C1466.cs_preferences)
-						
-						$sender.connect($node[0].address)
-						$sender.send(OB Copy:C1225($requestDraw); $requestPack)
-						
-					End if 
-				End for each 
+				messenger_net("send"; New object:C1471("cargo"; $cargo; "recipients"; $users[0].users; "nodes"; Form:C1466.cs_preferences.comm.nodes))
 				
 			End if 
 		End if 

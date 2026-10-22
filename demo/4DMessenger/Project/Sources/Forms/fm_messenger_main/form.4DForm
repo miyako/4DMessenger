@@ -12,7 +12,8 @@
 	"events": [
 		"onLoad",
 		"onClick",
-		"onUnload"
+		"onUnload",
+		"onTimer"
 	],
 	"windowTitle": "",
 	"destination": "detailScreen",
@@ -197,8 +198,7 @@
 					"contextMenu": "automatic",
 					"events": [
 						"onLoad",
-						"onOpenExternalLink",
-						"onEndUrlLoading"
+						"onOpenExternalLink"
 					],
 					"method": "ObjectMethods/zMessOutput.4dm"
 				},
@@ -523,8 +523,7 @@
 					"method": "ObjectMethods/zMessInput.4dm",
 					"events": [
 						"onGettingFocus",
-						"onOpenExternalLink",
-						"onEndUrlLoading"
+						"onOpenExternalLink"
 					]
 				},
 				"bSendShadow": {

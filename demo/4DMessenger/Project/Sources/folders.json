@@ -14,6 +14,7 @@
 			"Lib_Messenger_Net_Output",
 			"Lib_Messenger_Net_Request",
 			"Lib_Messenger_Preferences",
+			"Lib_Messenger_Service",
 			"Lib_Messenger_Stream"
 		]
 	},
@@ -26,7 +27,9 @@
 	"Default_Methods": {
 		"methods": [
 			"app_messenger_error",
-			"app_messenger_main"
+			"app_messenger_main",
+			"messenger_net",
+			"messenger_ui"
 		]
 	},
 	"Default_Tables": {},
