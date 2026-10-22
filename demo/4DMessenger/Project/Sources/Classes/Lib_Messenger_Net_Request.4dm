@@ -188,12 +188,13 @@ Function requestUnPack($key : Text; $requestRaw : Blob)->$success : Boolean
 				
 				// read date
 				
-				$dateRaw:=""
+				// built with Add to date: Date() of a text depends on the system date format
 				
-				$dateRaw:=String:C10(BLOB to longint:C551($requestRaw; Ordre octets PC:K22:3; $offset); "/0000")
-				$dateRaw:=String:C10(BLOB to integer:C549($requestRaw; Ordre octets PC:K22:3; $offset); "/00")+$dateRaw
-				$dateRaw:=String:C10(BLOB to integer:C549($requestRaw; Ordre octets PC:K22:3; $offset); "00")+$dateRaw
-				This:C1470.date:=Date:C102($dateRaw)
+				var $year; $month; $day : Integer
+				$year:=BLOB to longint:C551($requestRaw; Ordre octets PC:K22:3; $offset)
+				$month:=BLOB to integer:C549($requestRaw; Ordre octets PC:K22:3; $offset)
+				$day:=BLOB to integer:C549($requestRaw; Ordre octets PC:K22:3; $offset)
+				This:C1470.date:=Add to date(!00-00-00!; $year; $month; $day)
 				
 				// read time
 				
