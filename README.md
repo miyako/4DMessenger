@@ -29,7 +29,9 @@ TCP Communication, Data Exchange Methods: Creating a Messaging System: Japanese 
   - "Messanger" / "Messager" corrected to "4D Messenger".
   - Fixed: dates of received messages showed "undefined NaN" when the system date format was not day/month/year.
   - Fixed: empty messages were sent; the preferences file stored its own path; the errors list did not show the error code.
-  - The texts inside the two web areas (input placeholder, message dates) may still appear in English.
+  - The texts inside the two web areas (input placeholder, message dates) are passed once the pages are loaded, so they follow the UI language.
+  - Redesigned (v1.1.0): the TCP listener and the sending of messages run in a background worker (`messenger_net`, class `Lib_Messenger_Service`), not in the window. At most one window opens; closing it keeps the connection, and reopening it shows the messages received meanwhile.
+  - Because of this redesign, the demo's code differs from the code excerpts in the note (for example, the callbacks call `cs.Lib_Messenger_Service.me.deliver()` instead of `CALL FORM`, and read the settings from the listener instead of `Form.cs_preferences`).
 
 ## Editing and rebuilding
 

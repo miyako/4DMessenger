@@ -29,27 +29,32 @@ Case of
 		Form:C1466.cs_preferences:=cs:C1710.Lib_Messenger_Preferences.new()
 		Form:C1466.cs_preferences.load()
 		
-		// open listener
+		// cleanup cach, once per session (the history shown later uses the cached icons)
 		
-		Form:C1466.cs_interface.actioListenMessage()
+		If (Process number:C372("messenger_net")=0)
+			Form:C1466.cs_interface.actionCleanupCach()
+		End if 
 		
+		// connect to the network worker (it starts listening the first time)
+		
+		Form:C1466.cs_interface.actioAttach()
+		
+		// wait for the web areas
+		
+		SET TIMER(10)
+		
+	: ($evs=On Timer)
+		
+		Form:C1466.cs_interface.flush()
 		
 	: ($evs=On Unload:K2:2)
-		
-		// cleanup cach
-		
-		Form:C1466.cs_interface.actionCleanupCach()
 		
 		// close extend properties
 		
 		Form:C1466.cs_interface.expansion(False:C215)
 		
-		// close listener
+		// the network worker keeps listening
 		
-		Form:C1466.cs_interface.actioListenClose(False:C215)
-		
-		// clean worker
-		
-		KILL WORKER:C1390(Current process:C322)
+		Form:C1466.cs_interface.actioDetach()
 		
 End case 

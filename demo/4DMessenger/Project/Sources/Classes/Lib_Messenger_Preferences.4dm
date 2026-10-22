@@ -165,6 +165,12 @@ Function save()
 		SHOW ON DISK:C922(This:C1470.path.platformPath; *)
 	End if 
 	
+Function export() : Object
+	
+	// copy of the settings for the network worker
+	
+	return New object:C1471("comm"; OB Copy:C1225(This:C1470.comm); "user"; OB Copy:C1225(This:C1470.user))
+	
 Function load()
 	
 	// declare var

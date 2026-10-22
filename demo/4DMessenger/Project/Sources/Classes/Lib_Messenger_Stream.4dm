@@ -72,7 +72,7 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 					
 					If ($request.way=x Messenger Get user icon)
 						
-						DOCUMENT TO BLOB:C525(Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"+Folder separator:K24:12+Form:C1466.cs_preferences.user.name+".png"; $binBuffer)
+						DOCUMENT TO BLOB:C525(Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"+Folder separator:K24:12+This:C1470.listener.settings.user.name+".png"; $binBuffer)
 						INSERT IN BLOB:C559($binBuffer; 0; 1; 0x0002)
 						$connection.send($binBuffer)
 						
@@ -89,7 +89,7 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 						// icon missing
 						
 						$requestDraw:=cs:C1710.Lib_Messenger_Net_Request.new()
-						$requestDraw.sender:=Form:C1466.cs_preferences.user.name
+						$requestDraw.sender:=This:C1470.listener.settings.user.name
 						
 						For each ($user; Split string:C1554($request.recipient_list+","+$request.sender; ","; sk ignore empty strings:K86:1))
 							
@@ -100,19 +100,19 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 								
 								$requestDraw.way:=x Messenger Get user icon
 								$requestDraw.recipient:=$user
-								$requestPack:=$requestDraw.requestPack(Form:C1466.cs_preferences.comm.key)
+								$requestPack:=$requestDraw.requestPack(This:C1470.listener.settings.comm.key)
 								
-								$sender:=cs:C1710.Lib_Messenger_Net_Output.new(Form:C1466.cs_preferences)
+								$sender:=cs:C1710.Lib_Messenger_Net_Output.new(This:C1470.listener.settings)
 								
-								If ($user=Form:C1466.cs_preferences.user.name)
+								If ($user=This:C1470.listener.settings.user.name)
 									
-									$sender.connect(Form:C1466.cs_preferences.comm.address)
+									$sender.connect(This:C1470.listener.settings.comm.address)
 									$sender.send(OB Copy:C1225($requestDraw); $requestPack)
 								Else 
 									
-									If (Form:C1466.cs_preferences.comm.nodes.query("user = :1"; $user).length>0)
+									If (This:C1470.listener.settings.comm.nodes.query("user = :1"; $user).length>0)
 										
-										$sender.connect(Form:C1466.cs_preferences.comm.nodes.query("user = :1"; $user)[0].address)
+										$sender.connect(This:C1470.listener.settings.comm.nodes.query("user = :1"; $user)[0].address)
 										$sender.send(OB Copy:C1225($requestDraw); $requestPack)
 									End if 
 								End if 
@@ -122,7 +122,7 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 						
 						// update interface
 						
-						CALL FORM:C1391(This:C1470.listener.window; "app_messenger_main"; False:C215; $request)
+						cs:C1710.Lib_Messenger_Service.me.deliver($request; False:C215)
 						
 					End if 
 					

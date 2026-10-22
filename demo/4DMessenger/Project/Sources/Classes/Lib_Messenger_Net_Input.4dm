@@ -8,17 +8,15 @@
 // declare properties
 
 property listener : 4D:C1709.TCPListener
-property window : Integer
 property settings : Object
 
 // ----------------------------------------------------------------------------------
 
 // definition
 
-Class constructor($window : Integer; $settings : Object)
+Class constructor($settings : Object)
 	
 	This:C1470.listener:=4D:C1709.TCPListener.new($settings.comm.port; This:C1470)
-	This:C1470.window:=$window
 	This:C1470.settings:=$settings
 	
 Function terminate()
