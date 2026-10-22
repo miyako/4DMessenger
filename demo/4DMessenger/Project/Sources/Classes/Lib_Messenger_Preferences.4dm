@@ -68,7 +68,11 @@ Class constructor()
 		
 		// write file
 		
-		TEXT TO DOCUMENT:C1237(This:C1470.path.platformPath; JSON Stringify:C1217(This:C1470; *); "UTF-8"; Document unchanged:K24:18)
+		var $this : Object
+		$this:=OB Copy:C1225(This:C1470)
+		OB REMOVE:C1226($this; "path")
+		
+		TEXT TO DOCUMENT:C1237(This:C1470.path.platformPath; JSON Stringify:C1217($this; *); "UTF-8"; Document unchanged:K24:18)
 		
 	Else 
 		
@@ -100,7 +104,6 @@ Function save()
 	// copy raw
 	
 	$store:=JSON Parse:C1218(JSON Stringify:C1217(This:C1470))
-	OB REMOVE:C1226($store; "path")
 	
 	// init channel
 	
@@ -150,7 +153,11 @@ Function save()
 	
 	// write on disk
 	
-	TEXT TO DOCUMENT:C1237(This:C1470.path.platformPath; JSON Stringify:C1217(This:C1470; *); "UTF-8"; Document unchanged:K24:18)
+	var $this : Object
+	$this:=OB Copy:C1225(This:C1470)
+	OB REMOVE:C1226($this; "path")
+	
+	TEXT TO DOCUMENT:C1237(This:C1470.path.platformPath; JSON Stringify:C1217($this; *); "UTF-8"; Document unchanged:K24:18)
 	
 	// show preferences files ?
 	

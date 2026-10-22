@@ -1,4 +1,4 @@
-﻿//%attributes = {"invisible":true}
+//%attributes = {"invisible":true}
 
 // METHOD      : app_messenger_error
 // CREATOR     : omarolleau
@@ -46,7 +46,8 @@ Else
 			$right:=$left+640
 			$bottom:=$top+280
 			
-			$win:=Open window:C153($left; $top; $right; $bottom; Dialogue modal déplaçable:K34:7; Localized string:C991("xErrorWindowTitle"))
+			$win:=Open form window:C675("fm_messenger_errors"; Movable dialog box:K34:7)
+			SET WINDOW TITLE:C213(Localized string:C991("xErrorWindowTitle"); $win)
 			DIALOG:C40("fm_messenger_errors"; New object:C1471("errors"; $errors))
 			CLOSE WINDOW:C154($win)
 			

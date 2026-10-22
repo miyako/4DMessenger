@@ -71,7 +71,7 @@
 							},
 							"class": "ss_default",
 							"width": 64,
-							"dataSource": "This:C1470.errCode",
+							"dataSource": "This:C1470.errorCode",
 							"dataSourceTypeHint": "number",
 							"enterable": false,
 							"minWidth": 64

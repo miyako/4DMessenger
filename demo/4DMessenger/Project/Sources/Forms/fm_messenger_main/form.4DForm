@@ -14,7 +14,7 @@
 		"onClick",
 		"onUnload"
 	],
-	"windowTitle": "window title",
+	"windowTitle": "",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -204,11 +204,11 @@
 				},
 				"bSend": {
 					"type": "button",
-					"text": "🡖",
+					"text": "⤴️",
 					"top": 575,
 					"left": 449,
-					"width": 34,
-					"height": 34,
+					"width": 35,
+					"height": 35,
 					"events": [
 						"onClick"
 					],
@@ -227,11 +227,11 @@
 				},
 				"bClear": {
 					"type": "button",
-					"text": "⎚",
+					"text": "⏹️",
 					"top": 535,
 					"left": 449,
-					"width": 34,
-					"height": 34,
+					"width": 35,
+					"height": 35,
 					"events": [
 						"onClick"
 					],
@@ -312,8 +312,8 @@
 					"text": "📋",
 					"top": 41,
 					"left": 966,
-					"width": 31,
-					"height": 31,
+					"width": 35,
+					"height": 35,
 					"events": [
 						"onClick"
 					],
@@ -769,7 +769,7 @@
 		}
 	],
 	"method": "method.4dm",
-	"geometryStamp": 2696,
+	"geometryStamp": 2707,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

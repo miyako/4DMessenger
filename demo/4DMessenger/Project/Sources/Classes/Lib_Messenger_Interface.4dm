@@ -181,6 +181,11 @@ Function actioSendMessage()
 				// load cargo
 				
 				WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessInput"; "grabCargo"; $cargo)
+				
+				If ($cargo.first().contents="")
+					return 
+				End if 
+				
 				$requestDraw.cargo:=$cargo
 				
 				// define coordinate
