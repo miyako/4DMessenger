@@ -49,7 +49,7 @@ Case of
 		If ($new)
 			
 			$win:=Open form window:C675("fm_messenger_main"; Palette form window:K39:9; Horizontally centered:K39:1; Vertically centered:K39:4; *)
-			SET WINDOW TITLE:C213("4D Messager | PRC:"+String:C10($prc)+" | WIN:"+String:C10($win); $win)
+			SET WINDOW TITLE:C213(Localized string:C991("xTitleApp")+" | PRC:"+String:C10($prc)+" | WIN:"+String:C10($win); $win)
 			DIALOG:C40("fm_messenger_main"; *)
 			
 		End if 

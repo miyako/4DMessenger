@@ -197,7 +197,8 @@
 					"contextMenu": "automatic",
 					"events": [
 						"onLoad",
-						"onOpenExternalLink"
+						"onOpenExternalLink",
+						"onEndUrlLoading"
 					],
 					"method": "ObjectMethods/zMessOutput.4dm"
 				},
@@ -351,10 +352,10 @@
 				},
 				"tPort": {
 					"type": "text",
-					"text": "Port :",
+					"text": ":xliff:xLabelPort",
 					"top": 78,
-					"left": 821,
-					"width": 44,
+					"left": 806,
+					"width": 59,
 					"height": 16,
 					"class": "ss_label",
 					"sizingX": "move"
@@ -522,7 +523,8 @@
 					"method": "ObjectMethods/zMessInput.4dm",
 					"events": [
 						"onGettingFocus",
-						"onOpenExternalLink"
+						"onOpenExternalLink",
+						"onEndUrlLoading"
 					]
 				},
 				"bSendShadow": {

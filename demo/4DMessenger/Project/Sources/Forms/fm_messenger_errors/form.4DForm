@@ -14,7 +14,7 @@
 	"events": [
 		"onLoad"
 	],
-	"windowTitle": "window title",
+	"windowTitle": ":xliff:xErrorWindowTitle",
 	"destination": "detailScreen",
 	"pages": [
 		{
@@ -28,12 +28,12 @@
 					"left": 20,
 					"width": 64,
 					"height": 64,
-					"picture": "/RESOURCES/images/icons/signs_caution.svg",
+					"picture": "/RESOURCES/images/Icons/signs_net_caution.svg",
 					"pictureFormat": "scaled"
 				},
 				"tErrorTitle": {
 					"type": "text",
-					"text": "Networks Error !",
+					"text": ":xliff:xErrorTitle",
 					"top": 30,
 					"left": 104,
 					"width": 500,
@@ -61,7 +61,7 @@
 					"columns": [
 						{
 							"header": {
-								"text": "Code",
+								"text": ":xliff:xErrorHeaderCode",
 								"name": "xErrors_h1",
 								"class": "ss_default"
 							},
@@ -79,7 +79,7 @@
 						{
 							"header": {
 								"name": "xErrors_h2",
-								"text": "Component",
+								"text": ":xliff:xErrorHeaderComponent",
 								"class": "ss_default"
 							},
 							"name": "xErrors_c2",
@@ -95,7 +95,7 @@
 						{
 							"header": {
 								"name": "xErrors_h3",
-								"text": "Message",
+								"text": ":xliff:xErrorHeaderMessage",
 								"class": "ss_default"
 							},
 							"name": "xErrors_c3",
@@ -111,7 +111,7 @@
 				},
 				"bCloseError": {
 					"type": "button",
-					"text": "Close",
+					"text": ":xliff:CommonClose",
 					"top": 243,
 					"left": 488,
 					"width": 128,
@@ -132,7 +132,7 @@
 			}
 		}
 	],
-	"geometryStamp": 101,
+	"geometryStamp": 102,
 	"editor": {
 		"activeView": "View 1",
 		"defaultView": "View 1",

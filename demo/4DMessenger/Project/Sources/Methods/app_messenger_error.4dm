@@ -46,7 +46,7 @@ Else
 			$right:=$left+640
 			$bottom:=$top+280
 			
-			$win:=Open window:C153($left; $top; $right; $bottom; Dialogue modal déplaçable:K34:7; "app_messenger_error")
+			$win:=Open window:C153($left; $top; $right; $bottom; Dialogue modal déplaçable:K34:7; Localized string:C991("xErrorWindowTitle"))
 			DIALOG:C40("fm_messenger_errors"; New object:C1471("errors"; $errors))
 			CLOSE WINDOW:C154($win)
 			

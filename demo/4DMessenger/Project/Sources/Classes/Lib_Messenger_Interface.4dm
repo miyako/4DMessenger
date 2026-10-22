@@ -256,9 +256,9 @@ Function callContextMenu($area : Text)
 		
 		APPEND MENU ITEM:C411($menu; $target.title)
 		APPEND MENU ITEM:C411($menu; "-")
-		APPEND MENU ITEM:C411($menu; "Telecharger")
+		APPEND MENU ITEM:C411($menu; Localized string:C991("xMenuDownload"))
 		APPEND MENU ITEM:C411($menu; "-")
-		APPEND MENU ITEM:C411($menu; "Annuler")
+		APPEND MENU ITEM:C411($menu; Localized string:C991("CommonCancel"))
 		
 		SET MENU ITEM PARAMETER:C1004($menu; 3; "download")
 		
@@ -272,12 +272,12 @@ Function callContextMenu($area : Text)
 		
 		APPEND MENU ITEM:C411($menu; $target.title)
 		APPEND MENU ITEM:C411($menu; "-")
-		APPEND MENU ITEM:C411($menu; "Supprimer")
-		APPEND MENU ITEM:C411($menu; "Supprimer tous")
+		APPEND MENU ITEM:C411($menu; Localized string:C991("xMenuDelete"))
+		APPEND MENU ITEM:C411($menu; Localized string:C991("xMenuDeleteAll"))
 		APPEND MENU ITEM:C411($menu; "-")
-		APPEND MENU ITEM:C411($menu; "Telecharger")
+		APPEND MENU ITEM:C411($menu; Localized string:C991("xMenuDownload"))
 		APPEND MENU ITEM:C411($menu; "-")
-		APPEND MENU ITEM:C411($menu; "Annuler")
+		APPEND MENU ITEM:C411($menu; Localized string:C991("CommonCancel"))
 		
 		SET MENU ITEM PARAMETER:C1004($menu; 3; "delete")
 		SET MENU ITEM PARAMETER:C1004($menu; 4; "delete_all")

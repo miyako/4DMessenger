@@ -14,7 +14,7 @@
 If (FORM Event:C1606.code=On Clicked:K2:4)
 	
 	Form:C1466.cs_preferences.comm.nodes.push(New object:C1471(\
-		"address"; "Enter an user address here"; \
-		"user"; "Enter user name here"))
+		"address"; Localized string:C991("xTextNewNodeAddress"); \
+		"user"; Localized string:C991("xTextNewNodeUser")))
 	
 End if 
