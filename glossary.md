@@ -49,7 +49,8 @@ Full-width `（）` and `：` in prose. First occurrence of a technical term: �
 | listen (for connections) | 待ち受ける / 待ち受け | |
 | request | リクエスト | |
 | routing (way) | ルーティング | |
-| cargo | カーゴ（Cargo） | Payload field |
+| cargo | ペイロード（Cargo） | Payload field. Not カーゴ |
+| modern 4D environment | 現行バージョンの4D | Not モダンな4D環境 |
 | encapsulate / unencapsulate | カプセル化 / カプセル化の解除 | requestPack / requestUnPack |
 | encryption / decryption | 暗号化 / 復号 | |
 | passphrase | パスフレーズ | |
