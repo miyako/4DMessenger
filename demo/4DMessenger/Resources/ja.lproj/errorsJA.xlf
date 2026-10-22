@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file datatype="plaintext" original="errors" source-language="en" target-language="ja">
+		<header>
+			<note>application errors</note>
+		</header>
+		<body>
+			<trans-unit id="xErrorChannelMissing" resname="xErrorChannelMissing">
+				<source> Bad channel !</source>
+				<target>チャンネルが正しくありません。</target>
+			</trans-unit>
+			<trans-unit id="xErrorChannelNoUser" resname="xErrorChannelNoUser">
+				<source> Channel no user linked !</source>
+				<target>チャンネルにユーザーが登録されていません。</target>
+			</trans-unit>
+			<trans-unit id="xErrorWindowTitle" resname="xErrorWindowTitle">
+				<source>Errors</source>
+				<target>エラー</target>
+			</trans-unit>
+			<trans-unit id="xErrorTitle" resname="xErrorTitle">
+				<source>Network Error!</source>
+				<target>ネットワークエラー</target>
+			</trans-unit>
+			<trans-unit id="xErrorHeaderCode" resname="xErrorHeaderCode">
+				<source>Code</source>
+				<target>コード</target>
+			</trans-unit>
+			<trans-unit id="xErrorHeaderComponent" resname="xErrorHeaderComponent">
+				<source>Component</source>
+				<target>コンポーネント</target>
+			</trans-unit>
+			<trans-unit id="xErrorHeaderMessage" resname="xErrorHeaderMessage">
+				<source>Message</source>
+				<target>メッセージ</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

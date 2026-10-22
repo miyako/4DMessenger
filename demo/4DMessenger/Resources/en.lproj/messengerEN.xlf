@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file datatype="plaintext" original="messenger" source-language="en" target-language="en">
+		<header>
+			<note>application UI</note>
+		</header>
+		<body>
+			<trans-unit id="xTitleApp" resname="xTitleApp">
+				<source>4D Messenger</source>
+				<target>4D Messenger</target>
+			</trans-unit>
+			<trans-unit id="xTitleProperties" resname="xTitleProperties">
+				<source>Properties</source>
+				<target>Properties</target>
+			</trans-unit>
+			<trans-unit id="xGroupCom" resname="xGroupCom">
+				<source> Communication : </source>
+				<target> Communication : </target>
+			</trans-unit>
+			<trans-unit id="xGroupUser" resname="xGroupUser">
+				<source> User : </source>
+				<target> User : </target>
+			</trans-unit>
+			<trans-unit id="xGroupNode" resname="xGroupNode">
+				<source> Nodes : </source>
+				<target> Nodes : </target>
+			</trans-unit>
+			<trans-unit id="xGroupChannels" resname="xGroupChannels">
+				<source> Channels : </source>
+				<target> Channels : </target>
+			</trans-unit>
+			<trans-unit id="xLabelKey" resname="xLabelKey">
+				<source>Key : </source>
+				<target>Key : </target>
+			</trans-unit>
+			<trans-unit id="xLabelUserName" resname="xLabelUserName">
+				<source>Name : </source>
+				<target>Name : </target>
+			</trans-unit>
+			<trans-unit id="xLabelUserAvatar" resname="xLabelUserAvatar">
+				<source>Avatar : </source>
+				<target>Avatar : </target>
+			</trans-unit>
+			<trans-unit id="xLabelAddress" resname="xLabelAddress">
+				<source>Address : </source>
+				<target>Address : </target>
+			</trans-unit>
+			<trans-unit id="xLabelPort" resname="xLabelPort">
+				<source>Port :</source>
+				<target>Port :</target>
+			</trans-unit>
+			<trans-unit id="xTipEraseHistory" resname="xTipEraseHistory">
+				<source>Erase history</source>
+				<target>Erase history</target>
+			</trans-unit>
+			<trans-unit id="xTipSendMessage" resname="xTipSendMessage">
+				<source>Send message</source>
+				<target>Send message</target>
+			</trans-unit>
+			<trans-unit id="xTextNodeAddress" resname="xTextNodeAddress">
+				<source>Address</source>
+				<target>Address</target>
+			</trans-unit>
+			<trans-unit id="xTextNodeUser" resname="xTextNodeUser">
+				<source>User</source>
+				<target>User</target>
+			</trans-unit>
+			<trans-unit id="xTextSaved" resname="xTextSaved">
+				<source>Saved preferences !</source>
+				<target>Saved preferences !</target>
+			</trans-unit>
+			<trans-unit id="xTextChannelName" resname="xTextChannelName">
+				<source>Name</source>
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="xTextChannelUsers" resname="xTextChannelUsers">
+				<source>Recipients</source>
+				<target>Recipients</target>
+			</trans-unit>
+			<trans-unit id="xTextChannel" resname="xTextChannel">
+				<source>Channel : </source>
+				<target>Channel : </target>
+			</trans-unit>
+			<trans-unit id="xButtonSave" resname="xButtonSave">
+				<source>Save</source>
+				<target>Save</target>
+			</trans-unit>
+			<trans-unit id="xTextNewNodeAddress" resname="xTextNewNodeAddress">
+				<source>Enter a user address here</source>
+				<target>Enter a user address here</target>
+			</trans-unit>
+			<trans-unit id="xTextNewNodeUser" resname="xTextNewNodeUser">
+				<source>Enter user name here</source>
+				<target>Enter user name here</target>
+			</trans-unit>
+			<trans-unit id="xTextNewChannelName" resname="xTextNewChannelName">
+				<source>Enter channel name here</source>
+				<target>Enter channel name here</target>
+			</trans-unit>
+			<trans-unit id="xTextNewChannelUsers" resname="xTextNewChannelUsers">
+				<source>Enter users here</source>
+				<target>Enter users here</target>
+			</trans-unit>
+			<trans-unit id="xMenuDownload" resname="xMenuDownload">
+				<source>Download</source>
+				<target>Download</target>
+			</trans-unit>
+			<trans-unit id="xMenuDelete" resname="xMenuDelete">
+				<source>Delete</source>
+				<target>Delete</target>
+			</trans-unit>
+			<trans-unit id="xMenuDeleteAll" resname="xMenuDeleteAll">
+				<source>Delete all</source>
+				<target>Delete all</target>
+			</trans-unit>
+			<trans-unit id="xWebPlaceholder" resname="xWebPlaceholder">
+				<source>Write here or drag a file...</source>
+				<target>Write here or drag a file...</target>
+			</trans-unit>
+			<trans-unit id="xWebFileTooLarge" resname="xWebFileTooLarge">
+				<source>The file cannot be added: it is larger than {max} MB.</source>
+				<target>The file cannot be added: it is larger than {max} MB.</target>
+			</trans-unit>
+			<trans-unit id="xWebDateFormat" resname="xWebDateFormat">
+				<source>{dayName} {day} {month} {year} at {hh}:{mm}</source>
+				<target>{dayName} {day} {month} {year} at {hh}:{mm}</target>
+			</trans-unit>
+			<trans-unit id="xWebDays" resname="xWebDays">
+				<source>Sun,Mon,Tue,Wed,Thu,Fri,Sat</source>
+				<target>Sun,Mon,Tue,Wed,Thu,Fri,Sat</target>
+			</trans-unit>
+			<trans-unit id="xWebMonths" resname="xWebMonths">
+				<source>Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</source>
+				<target>Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

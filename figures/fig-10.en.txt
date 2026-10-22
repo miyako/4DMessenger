@@ -1,0 +1,34 @@
+TCP Messenger Architecture
+Data Reception and Transmission Flow
+DATA RECEPTION
+DATA TRANSMISSION
+TCPListener
+TCPConnection
+Listens for incoming TCP connections
+Manages outgoing TCP connections
+Network Layer Component
+Network Layer Component
+receives data
+sends data
+Lib_Messenger_Net_Input
+Lib_Messenger_Net_Output
+TCP/IP Network
+Processes incoming messages
+Prepares messages for sending
+Dedicated Class for Data Handling
+Dedicated Class for Data Handling
+maintains
+maintains
+Web Area (CSS)
+Web Area (CSS)
+UI Form object managing input
+UI Form object managing output
+Presentation Layer
+Presentation Layer
+Reception Flow
+Transmission Flow
+Application Classes
+UI Form Objects
+Data flows through dedicated classes maintained by
+(legend overflow, panel)
+(legend overflow, margin)

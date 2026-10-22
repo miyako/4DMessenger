@@ -21,7 +21,11 @@ DEFAULTS = {
     "header_y": 0,                  # ignore lines whose top is above this (pt)
     "footer_y": 710,                # ignore lines whose top is below this (pt)
     "heading": {"fonts": ["Bold", "Medium"], "min_size": 12, "levels_by_x": {}, "default_level": 2},
-    "code": {"colors": [], "fonts": ["Mono", "Courier", "Menlo", "Consolas", "Monaco"], "indent": 5},
+    # boxed: lines framed by exactly one left and one right vertical border (no inner borders) are code
+    "code": {"colors": [], "fonts": ["Mono", "Courier", "Menlo", "Consolas", "Monaco"], "indent": 5,
+             "boxed": False},
+    # vector diagrams to rasterise as figures: [{"page": N, "clip": [x0, y0, x1, y1], "dpi": 300}]
+    "vector_figures": [],
     "bullets": {"fonts": ["SymbolMT", "Wingdings-Regular"], "strip_fonts": ["ArialMT"]},
     "caption": {"italic": True, "min_x": 0},
     "table": {"size": None},        # font size used only by table cells, or null

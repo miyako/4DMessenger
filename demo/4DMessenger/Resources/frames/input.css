@@ -1,0 +1,42 @@
+
+.ss_message_container {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s ease;
+
+}
+
+.ss_message_container > textarea {
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    padding: 5px;
+
+}
+
+
+.ss_message_container > textarea:focus {
+
+  outline: none;
+
+}
+
+.ss_dragover {
+
+    background-color: #BDDFBC;
+    border: 1px dashed #3399ff;
+
+}

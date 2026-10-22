@@ -1,0 +1,54 @@
+3 Formulaire: fm_messenger_main
+> [|Z 6 9
+4D Messanger
+Form.cs_interface.listen
+Communication :
+Key
+Form.cs_preferences.comm.key
+50
+Form.cs_prefe
+Addres:
+Form.cs_preferences.com
+Port:
+im address.
+ranras camm
+100
+User:
+150
+User
+Form.cs_preferences.user.
+Avatar :
+Name :
+Avatar"
+nama,
+200
+Nodes
+250
+Address
+User
+This.address
+This.user
+300
+350
+400
+"zMessOutput"
+(— Channels :
+450
+Recipients
+Channel :
+mChannel
+This.users
+500
+550
+"zMessinput"
+600
+Save
+650
+00
+00
+00
+650
+00
+00
+000
+050

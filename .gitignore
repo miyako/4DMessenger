@@ -9,6 +9,10 @@ demo/*/Logs/
 demo/*/userPreferences.*/
 demo/*/Project/DerivedData/
 
+# local 4D test settings (web server address) and the default web folder
+demo/*/Project/Sources/settings.4DSettings
+demo/*/WebFolder/
+
 # Tools provisioned by the 4D skills (see the 4dtools skill)
 /tools/4dcatalog/
 /tools/4dform/

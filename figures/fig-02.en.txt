@@ -1,0 +1,18 @@
+Communication :
+Key:
+MyKey
+Address :
+192.168.0.20
+Port :
+19820
+User:
+Avatar : 3)
+Name
+Nodes :
+Address
+User
+192.168.0.10
+Channels :
+Name
+Recipients
+Default

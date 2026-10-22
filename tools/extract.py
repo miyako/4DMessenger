@@ -40,8 +40,28 @@ def write(path: Path, text: str, force: bool):
     print(f"wrote: {path.relative_to(ROOT)}")
 
 
+def vertical_borders(page):
+    segs = []
+    for g in page.get_drawings():
+        r = g["rect"]
+        if r.width < 3 and r.height > 5:
+            segs.append((r.x0, r.y0, r.y1))
+    return segs
+
+
+def is_boxed(segs, x0, x1, ymid):
+    across = [x for x, y0, y1 in segs if y0 - 0.5 <= ymid <= y1 + 0.5]
+    return (len(across) == 2 and min(across) <= x0 and max(across) >= x1 - 1)
+
+
+def inside(clip, x0, y0, x1, y1):
+    return x0 >= clip[0] - 1 and y0 >= clip[1] - 1 and x1 <= clip[2] + 1 and y1 <= clip[3] + 1
+
+
 def line_items(page):
     items = []
+    clips = [vf for vf in CFG["vector_figures"] if vf["page"] == page.number + 1]
+    segs = vertical_borders(page) if CFG["code"]["boxed"] else []
     for b in page.get_text("dict")["blocks"]:
         if b["type"] != 0:
             continue
@@ -50,10 +70,19 @@ def line_items(page):
             x0, y0, x1, y1 = l["bbox"]
             if y0 > CFG["footer_y"] or y0 < CFG["header_y"]:  # running header/footer
                 continue
+            if any(inside(vf["clip"], x0, y0, x1, y1) for vf in clips):
+                continue
             items.append({"kind": "line", "x": round(x0), "y0": y0, "y1": y1, "x1": x1,
-                          "spans": spans, "text": "".join(s["text"] for s in spans)})
+                          "spans": spans, "text": "".join(s["text"] for s in spans),
+                          "boxed": bool(segs) and is_boxed(segs, x0, x1, (y0 + y1) / 2)})
+    for vf in clips:
+        x0, y0, x1, y1 = vf["clip"]
+        items.append({"kind": "image", "y0": y0, "y1": y1, "xref": None, "width_pt": x1 - x0,
+                      "vector": vf})
     for info in page.get_image_info(xrefs=True):
         x0, y0, x1, y1 = info["bbox"]
+        if any(inside(vf["clip"], x0, y0, x1, y1) for vf in clips):
+            continue
         items.append({"kind": "image", "y0": y0, "y1": y1, "xref": info["xref"],
                       "width_pt": x1 - x0})
     items.sort(key=lambda it: (it["y0"], it.get("x", 0)))
@@ -66,6 +95,11 @@ def font_of(span):
 
 def is_code_font(span):
     return any(f in font_of(span) for f in CODE_FONTS)
+
+
+def spans_code_font(item):
+    spans = [s for s in item["spans"] if s["text"].strip()]
+    return bool(spans) and all(is_code_font(s) for s in spans)
 
 
 def is_code_line(item, body_x):
@@ -183,7 +217,8 @@ def extract_body(doc):
         for it in line_items(doc[pno]):
             if it["kind"] == "image":
                 flush_all()
-                figures.append({"page": pno + 1, "xref": it["xref"], "width_pt": it["width_pt"]})
+                figures.append({"page": pno + 1, "xref": it["xref"], "width_pt": it["width_pt"],
+                                "vector": it.get("vector")})
                 out.append(f"![](fig-{len(figures):02d})\n")
                 prev = None
                 continue
@@ -192,7 +227,7 @@ def extract_body(doc):
             size = round(max(s["size"] for s in it["spans"]))
 
             if not text.strip():
-                if state["code"] and it["x"] >= body_x + CFG["code"]["indent"]:
+                if state["code"] and (it["boxed"] or it["x"] >= body_x + CFG["code"]["indent"]):
                     state["code"].append(it)
                 else:
                     flush_code()
@@ -207,6 +242,12 @@ def extract_body(doc):
                 out.append(f"{'#' * level} {text.strip()}\n")
                 body_x = it["x"]
                 prev = None
+                continue
+
+            if it["boxed"] or (spans_code_font(it) and not state["in_bullet"]):
+                flush_para(); flush_bullets(); flush_table()
+                state["code"].append(it)
+                prev = it
                 continue
 
             if is_caption(it):
@@ -288,13 +329,37 @@ def ocr_lines(png: Path):
     return lines
 
 
+def text_layer_lines(doc, fig):
+    """Figure text for a rasterised vector diagram, from the PDF text layer (no OCR)."""
+    vf = fig["vector"]
+    clip = pymupdf.Rect(vf["clip"])
+    k = vf.get("dpi", 300) / 72
+    lines = []
+    for b in doc[fig["page"] - 1].get_text("dict", clip=clip)["blocks"]:
+        for l in b.get("lines", []):
+            text = "".join(s["text"] for s in l["spans"]).strip()
+            if not text:
+                continue
+            x0, y0, x1, y1 = l["bbox"]
+            box = [round((x0 - clip.x0) * k), round((y0 - clip.y0) * k),
+                   round((x1 - x0) * k), round((y1 - y0) * k)]
+            lines.append({"box": box, "text": text})
+    lines.sort(key=lambda l: (l["box"][1] // 10, l["box"][0]))
+    return lines
+
+
 def extract_figures(doc, figures, force):
     figdir = ROOT / "figures"
     (figdir / "layout").mkdir(parents=True, exist_ok=True)
     for n, fig in enumerate(figures, 1):
         name = f"fig-{n:02d}"
         png = figdir / f"{name}.png"
-        if force or not png.exists():
+        vf = fig.get("vector")
+        if vf and (force or not png.exists()):
+            page = doc[fig["page"] - 1]
+            page.get_pixmap(clip=pymupdf.Rect(vf["clip"]), dpi=vf.get("dpi", 300)).save(png)
+            print(f"wrote: {png.relative_to(ROOT)}")
+        elif force or not png.exists():
             pix = pymupdf.Pixmap(doc, fig["xref"])
             smask = doc.xref_get_key(fig["xref"], "SMask")
             if smask[0] == "xref":
@@ -303,7 +368,7 @@ def extract_figures(doc, figures, force):
             print(f"wrote: {png.relative_to(ROOT)}")
         layout_path = figdir / "layout" / f"{name}.json"
         if force or not layout_path.exists():
-            lines = ocr_lines(png)
+            lines = text_layer_lines(doc, fig) if vf else ocr_lines(png)
             layout = {"source": f"{name}.png", "page": fig["page"],
                       "width_pt": round(fig["width_pt"], 1), "localize": True,
                       "items": [{"box": l["box"], "align": "center"} for l in lines]}

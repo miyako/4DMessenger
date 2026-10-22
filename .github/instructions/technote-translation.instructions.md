@@ -40,6 +40,8 @@ The workflow and checkpoints are in `AGENTS.md`. This file is a technical refere
 | `heading.levels_by_x` | `{"x": level}`: heading level by left x (nearest within 6 pt); otherwise `default_level` |
 | `code.colors` | Hex colours of syntax-highlighted code spans (Word exports code as coloured text) |
 | `code.fonts` | Monospace font substrings; `code.indent` = minimum x offset for code continuation lines |
+| `code.boxed` | `true`: lines framed by exactly one left and one right vertical border (Word paragraph borders) are code |
+| `vector_figures` | `[{page, clip: [x0,y0,x1,y1], dpi}]`: rasterise a vector diagram as a figure; its text comes from the PDF text layer, not OCR |
 | `bullets.fonts` / `strip_fonts` | Glyph fonts that mark list items / fonts of separator spans to drop |
 | `caption.italic`, `caption.min_x` | Captions are italic lines starting right of `min_x` |
 | `table.size` | Font size used only by table cells (or null) |
@@ -73,7 +75,7 @@ monospace font for code instead of colours, `code.colors` can stay empty.
   `![caption](fig-NN)` placed where the image sits.
   - `layout/fig-NN.json` stores `source`, `page`, `width_pt` (the placed width, reused in the rebuild) and
     `localize`, plus one `items[]` entry per OCR line with its `box`.
-- Vector diagrams (drawn with PDF paths, not images) are **not** extracted. `inspect` lists pages with many
+- Vector diagrams (drawn with PDF paths, not images) are only extracted when listed in `vector_figures`. `inspect` lists pages with many
   drawings. If they contain text, ask the user: either rasterise the region with `page.get_pixmap(clip=…)` into a
   new figure, or leave it.
 - Re-extraction never overwrites. `--force` overwrites `<src>` files and layouts, so warn the user first:
@@ -107,7 +109,7 @@ For each changed item:
 4. Similar sizes are snapped together, so labels of the same rank match.
 5. The text is drawn with the weight (`light`, `regular` or `bold`) and alignment (`center` or `left`).
 
-Overrides per item: `scale`, `size`, `weight`, `align`, `dx`, `dy`, `box`, `bg`, `fg`, `erase_pad`.
+Overrides per item: `scale`, `size`, `weight`, `align`, `dx`, `dy`, `box`, `bg`, `fg`, `erase_pad`, `erase: "row"` (repeat the pixel left of the box on each row; keeps vertical gradients).
 Per figure:
 - `"localize": false` copies the image unchanged (use it for screenshots)
 - `"replace": "fig-NN-<tgt>.png"` uses a ready-made image from `figures/`, keeping `width_pt`

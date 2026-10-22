@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+	<file datatype="plaintext" original="messenger" source-language="en" target-language="ja">
+		<header>
+			<note>application UI</note>
+		</header>
+		<body>
+			<trans-unit id="xTitleApp" resname="xTitleApp">
+				<source>4D Messenger</source>
+				<target>4D Messenger</target>
+			</trans-unit>
+			<trans-unit id="xTitleProperties" resname="xTitleProperties">
+				<source>Properties</source>
+				<target>プロパティ</target>
+			</trans-unit>
+			<trans-unit id="xGroupCom" resname="xGroupCom">
+				<source> Communication : </source>
+				<target> 通信： </target>
+			</trans-unit>
+			<trans-unit id="xGroupUser" resname="xGroupUser">
+				<source> User : </source>
+				<target> ユーザー： </target>
+			</trans-unit>
+			<trans-unit id="xGroupNode" resname="xGroupNode">
+				<source> Nodes : </source>
+				<target> ノード： </target>
+			</trans-unit>
+			<trans-unit id="xGroupChannels" resname="xGroupChannels">
+				<source> Channels : </source>
+				<target> チャンネル： </target>
+			</trans-unit>
+			<trans-unit id="xLabelKey" resname="xLabelKey">
+				<source>Key : </source>
+				<target>キー：</target>
+			</trans-unit>
+			<trans-unit id="xLabelUserName" resname="xLabelUserName">
+				<source>Name : </source>
+				<target>名前：</target>
+			</trans-unit>
+			<trans-unit id="xLabelUserAvatar" resname="xLabelUserAvatar">
+				<source>Avatar : </source>
+				<target>アバター：</target>
+			</trans-unit>
+			<trans-unit id="xLabelAddress" resname="xLabelAddress">
+				<source>Address : </source>
+				<target>アドレス：</target>
+			</trans-unit>
+			<trans-unit id="xLabelPort" resname="xLabelPort">
+				<source>Port :</source>
+				<target>ポート：</target>
+			</trans-unit>
+			<trans-unit id="xTipEraseHistory" resname="xTipEraseHistory">
+				<source>Erase history</source>
+				<target>履歴を消去</target>
+			</trans-unit>
+			<trans-unit id="xTipSendMessage" resname="xTipSendMessage">
+				<source>Send message</source>
+				<target>メッセージを送信</target>
+			</trans-unit>
+			<trans-unit id="xTextNodeAddress" resname="xTextNodeAddress">
+				<source>Address</source>
+				<target>アドレス</target>
+			</trans-unit>
+			<trans-unit id="xTextNodeUser" resname="xTextNodeUser">
+				<source>User</source>
+				<target>ユーザー</target>
+			</trans-unit>
+			<trans-unit id="xTextSaved" resname="xTextSaved">
+				<source>Saved preferences !</source>
+				<target>環境設定を保存しました。</target>
+			</trans-unit>
+			<trans-unit id="xTextChannelName" resname="xTextChannelName">
+				<source>Name</source>
+				<target>名前</target>
+			</trans-unit>
+			<trans-unit id="xTextChannelUsers" resname="xTextChannelUsers">
+				<source>Recipients</source>
+				<target>受信者</target>
+			</trans-unit>
+			<trans-unit id="xTextChannel" resname="xTextChannel">
+				<source>Channel : </source>
+				<target>チャンネル：</target>
+			</trans-unit>
+			<trans-unit id="xButtonSave" resname="xButtonSave">
+				<source>Save</source>
+				<target>保存</target>
+			</trans-unit>
+			<trans-unit id="xTextNewNodeAddress" resname="xTextNewNodeAddress">
+				<source>Enter a user address here</source>
+				<target>ここにユーザーのアドレスを入力</target>
+			</trans-unit>
+			<trans-unit id="xTextNewNodeUser" resname="xTextNewNodeUser">
+				<source>Enter user name here</source>
+				<target>ここにユーザー名を入力</target>
+			</trans-unit>
+			<trans-unit id="xTextNewChannelName" resname="xTextNewChannelName">
+				<source>Enter channel name here</source>
+				<target>ここにチャンネル名を入力</target>
+			</trans-unit>
+			<trans-unit id="xTextNewChannelUsers" resname="xTextNewChannelUsers">
+				<source>Enter users here</source>
+				<target>ここにユーザーを入力</target>
+			</trans-unit>
+			<trans-unit id="xMenuDownload" resname="xMenuDownload">
+				<source>Download</source>
+				<target>ダウンロード</target>
+			</trans-unit>
+			<trans-unit id="xMenuDelete" resname="xMenuDelete">
+				<source>Delete</source>
+				<target>削除</target>
+			</trans-unit>
+			<trans-unit id="xMenuDeleteAll" resname="xMenuDeleteAll">
+				<source>Delete all</source>
+				<target>すべて削除</target>
+			</trans-unit>
+			<trans-unit id="xWebPlaceholder" resname="xWebPlaceholder">
+				<source>Write here or drag a file...</source>
+				<target>ここに入力するか、ファイルをドラッグしてください…</target>
+			</trans-unit>
+			<trans-unit id="xWebFileTooLarge" resname="xWebFileTooLarge">
+				<source>The file cannot be added: it is larger than {max} MB.</source>
+				<target>ファイルを追加できません（{max}MBを超えています）。</target>
+			</trans-unit>
+			<trans-unit id="xWebDateFormat" resname="xWebDateFormat">
+				<source>{dayName} {day} {month} {year} at {hh}:{mm}</source>
+				<target>{year}年{monthNumber}月{day}日（{dayName}）{hh}:{mm}</target>
+			</trans-unit>
+			<trans-unit id="xWebDays" resname="xWebDays">
+				<source>Sun,Mon,Tue,Wed,Thu,Fri,Sat</source>
+				<target>日,月,火,水,木,金,土</target>
+			</trans-unit>
+			<trans-unit id="xWebMonths" resname="xWebMonths">
+				<source>Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</source>
+				<target>1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
