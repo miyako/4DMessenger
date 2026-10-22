@@ -37,7 +37,7 @@ Else
 		
 	Else 
 		
-		$win:=Open form window:C675("fm_messenger_main"; Palette form window:K39:9; Horizontally centered:K39:1; Vertically centered:K39:4; *)
+		$win:=Open form window:C675("fm_messenger_main"; Palette form window:K39:9; Horizontally centered:K39:1; Vertically centered:K39:4)
 		SET WINDOW TITLE:C213(Localized string:C991("xTitleApp"); $win)
 		DIALOG:C40("fm_messenger_main"; *)
 		

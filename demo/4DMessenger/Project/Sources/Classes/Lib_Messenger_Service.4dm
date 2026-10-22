@@ -107,6 +107,14 @@ Function deliver($update : Object; $sent : Boolean)
 		CALL FORM:C1391(This:C1470.window; "messenger_ui"; "draw"; New object:C1471("update"; $update; "sent"; $sent))
 	End if 
 	
+Function iconSaved($user : Text)
+	
+	// redraw the avatars shown before the icon arrived
+	
+	If (This:C1470.window#0)
+		CALL FORM:C1391(This:C1470.window; "messenger_ui"; "icon"; New object:C1471("user"; $user))
+	End if 
+	
 Function clear()
 	
 	This:C1470.history:=New collection:C1472()

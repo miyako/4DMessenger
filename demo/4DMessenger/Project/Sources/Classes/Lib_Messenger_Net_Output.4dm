@@ -11,6 +11,7 @@ property connection : 4D:C1709.TCPConnection
 property settings : Object
 property requestDraw : Object
 property requestPack : Blob
+property received : Blob
 
 // ----------------------------------------------------------------------------------
 
@@ -24,6 +25,7 @@ Class constructor($settings : Object)
 	This:C1470.settings:=$settings
 	This:C1470.requestDraw:=New object:C1471()
 	This:C1470.requestPack:=$bin
+	This:C1470.received:=$bin
 	
 Function connect($adress : Text)
 	
@@ -58,13 +60,24 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 	
 	// var
 	
-	var $bin : Blob
+	var $bin; $buffer : Blob
+	
+	var $size : Integer
+	
+	var $user : Text
+	
+	// an icon can arrive in several packets: append them
+	
+	$bin:=This:C1470.received
+	$buffer:=$event.data
+	COPY BLOB:C558($buffer; $bin; 0; BLOB size:C605($bin); BLOB size:C605($buffer))
+	This:C1470.received:=$bin
+	
+	$size:=BLOB size:C605($bin)
 	
 	// blob contain somthings
 	
-	If (BLOB size:C605($event.data)>=1)
-		
-		$bin:=$event.data
+	If ($size>=1)
 		
 		Case of 
 			: ($bin{0}=0x0001)
@@ -72,15 +85,37 @@ Function onData($connection : 4D:C1709.TCPConnection; $event : 4D:C1709.TCPEvent
 				// update interface
 				
 				cs:C1710.Lib_Messenger_Service.me.deliver(This:C1470.requestDraw; True:C214)
+				SET BLOB SIZE:C606($bin; 0)
 				
 			: ($bin{0}=0x0002)
 				
-				DELETE FROM BLOB:C560($bin; 0; 1)
-				BLOB TO DOCUMENT:C526(Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"+Folder separator:K24:12+This:C1470.settings.comm.nodes.query("address = :1"; $connection.address)[0].user+".png"; $bin)
+				// complete when the PNG ends with its IEND chunk (49 45 4E 44 AE 42 60 82)
+				
+				If ($size>=9)
+					If (($bin{$size-8}=0x0049) & ($bin{$size-7}=0x0045) & ($bin{$size-6}=0x004E) & ($bin{$size-5}=0x0044) \
+						 & ($bin{$size-4}=0x00AE) & ($bin{$size-3}=0x0042) & ($bin{$size-2}=0x0060) & ($bin{$size-1}=0x0082))
+						
+						// save it under the name of the user it was requested from
+						
+						$user:=String:C10(This:C1470.requestDraw.recipient)
+						If ($user#"")
+							DELETE FROM BLOB:C560($bin; 0; 1)
+							BLOB TO DOCUMENT:C526(Get 4D folder:C485(Active 4D Folder:K5:10)+"Messenger"+Folder separator:K24:12+$user+".png"; $bin)
+							cs:C1710.Lib_Messenger_Service.me.iconSaved($user)
+						End if 
+						
+						SET BLOB SIZE:C606($bin; 0)
+						
+					End if 
+				End if 
+				
+			Else 
+				
+				SET BLOB SIZE:C606($bin; 0)
 				
 		End case 
 		
-		SET BLOB SIZE:C606($bin; 0)
+		This:C1470.received:=$bin
 		
 	End if 
 	

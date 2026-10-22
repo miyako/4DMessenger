@@ -20,4 +20,10 @@ Case of
 		Form:C1466.cs_interface.pending.push($params)
 		Form:C1466.cs_interface.flush()
 		
+	: ($action="icon")
+		
+		If (Form:C1466.cs_interface.output_ready)
+			WA EXECUTE JAVASCRIPT FUNCTION:C1043(*; "zMessOutput"; "avatarRefresh"; *; $params.user)
+		End if 
+		
 End case 

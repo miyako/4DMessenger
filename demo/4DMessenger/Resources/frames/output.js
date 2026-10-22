@@ -52,7 +52,7 @@ function drawMessage (update) {
                 // add avatar image of sender
                 const avatar_img_send = document.createElement('img');
                 avatar_img_send.classList.add('ss_message_avatar');
-                avatar_img_send.src = avatar_path + update.sender + '.png';
+                avatar_img_send.src = avatar_path + encodeURIComponent(update.sender) + '.png';
                 avatar_img_send.alt = update.sender;
                 avatar_img_send.title = update.sender;
                 message.prepend(avatar_img_send);
@@ -80,7 +80,7 @@ function drawMessage (update) {
                 // add avatar image of receipt
                 const avatar_img = document.createElement('img');
                 avatar_img.classList.add('ss_message_avatar');
-                avatar_img.src = avatar_path + update.recipient + '.png';
+                avatar_img.src = avatar_path + encodeURIComponent(update.recipient) + '.png';
                 avatar_img.alt = update.recipient;
                 avatar_img.title = update.recipient;
                 message.prepend(avatar_img);
@@ -209,6 +209,17 @@ function drawMessage (update) {
 function scrollTarget (id) {
 
     document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+
+}
+
+// reload the avatars of a user once 4D has saved the icon (it can arrive after the message)
+function avatarRefresh(user) {
+
+    document.querySelectorAll('img.ss_message_avatar').forEach(img => {
+        if (img.alt === user) {
+            img.src = avatar_path + encodeURIComponent(user) + '.png?' + Date.now();
+        }
+    });
 
 }
 
